@@ -1,0 +1,421 @@
+<html class="">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="renderer" content="webkit">
+		<meta name="referrer" content="always">
+
+		<title id="js-meta-title">
+			图文素材 - 飞煌微信分销</title>
+
+		<link rel="icon" href="https://b.yzcdn.cn/v2/image/yz_fc.ico">
+
+		<meta name="keywords" content="有赞,微信商城,粉丝营销,微信商城运营">
+		<meta name="description" content="有赞是帮助商家在微信上搭建微信商城的平台，提供店铺、商品、订单、物流、消息和客户的管理模块，同时还提供丰富的营销应用和活动插件。">
+
+		<link rel="stylesheet" href="css/lib/chosen.jquery.20150826.min.css" />
+		<!-- ▼ Common CSS -->
+		<link rel="stylesheet" href="css/lib/jquery.ui.20151022.min.css" />
+		<link rel="stylesheet" href="css/lib/bootstrap_140705.min.css" />
+		<link rel="stylesheet" href="css/lib/pc_346e770ff6.css" />
+		<!-- ▲ Common CSS -->
+
+		<!-- ▼ App CSS -->
+		<link rel="stylesheet" href="css/image_text_28e2a4d1aa.css" />
+		<!-- ▲ App CSS -->
+
+		<link rel="stylesheet" href="css/lib/ueditor.css" />
+	</head>
+
+	<body class="theme theme--blue">
+
+		<!-- ▼ Main header -->
+		<header class="ui-header">
+			<div class="ui-header-inner clearfix">
+				<h1 class="ui-header-logo">
+					<a href="//koudaitong.com/v2/dashboard/index" title="有赞">
+						<span class="version"><i>3.0</i></span>
+					</a>
+				</h1>
+				<nav class="ui-header-nav">
+					<ul class="clearfix">
+						<li class="divide">|</li>
+						<li>
+							<a href="//koudaitong.com/v2/showcase/dashboard">店铺</a>
+						</li>
+						<li>
+							<a href="//koudaitong.com/v2/showcase/goods">商品</a>
+						</li>
+						<li>
+							<a href="//koudaitong.com/v2/trade/dashboard">订单</a>
+						</li>
+						<li class="divide">|</li>
+
+						<li class="js-weixin-notify active">
+							<a href="//koudaitong.com/v2/weixin/autoreply/normal">微信<sup class="notify-counter" style="visibility: hidden;"></sup></a>
+						</li>
+
+						<li class="js-weibo-notify">
+							<a href="//koudaitong.com/v2/sinaweibo/timeline/index">微博<sup class="notify-counter" style="visibility: hidden;"></sup></a>
+						</li>
+
+						<li class="divide">|</li>
+						<li>
+							<a href="//koudaitong.com/v2/ump/dashboard">应用和营销</a>
+						</li>
+						<li class="divide">|</li>
+
+						<li>
+							<a href="//koudaitong.com/v2/statcenter/dashboard">数据中心</a>
+						</li>
+						<li class="divide">|</li>
+
+						<li><a href="http://bbs.youzan.com/forum.php" target="_blank">商家社区</a></li>
+					</ul>
+				</nav>
+				<div class="ui-header-user ">
+					<div class="customer-wrap">
+					</div>
+					<div class="dropdown hover dropdown-right">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<span class="txt">
+								<span class="ellipsis team_name">飞煌微信分销</span><span class="dash"> - </span>设置
+							</span>
+							<i class="caret"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="//koudaitong.com/v2/account/team#select">切换店铺</a></li>
+							<li class="divide"></li>
+
+							<li><a href="//koudaitong.com/v2/setting/store">店铺设置</a></li>
+							<li><a href="//koudaitong.com/v2/account/personal">账号设置</a></li>
+							<li class="divide"></li>
+
+							<li><span>15007102058</span></li>
+							<li><a href="//koudaitong.com/v2/account/user/logout">退出</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- ▲ Main header -->
+
+		<!-- ▼ Main container -->
+		<div class="container">
+			<div class="app">
+				<div class="app-inner clearfix">
+					<div class="app-init-container">
+						<p class="alert" style="margin-bottom:10px;"><a href="http://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=92234&amp;extra=page%3D1"
+							 target="_blank">有赞微商城微页面和微信图文使用规范</a></p>
+						<nav class="ui-nav clearfix">
+							<ul class="pull-left">
+								<li id="js-nav-list-index" class="">
+									<a href="//koudaitong.com/v2/weixin/imagetext#list">微信图文</a>
+								</li>
+								<li>
+									<a href="//koudaitong.com/v2/weixin/advancednews#list">高级图文</a>
+								</li>
+							</ul>
+							<div class="common-helps-entry pull-right">
+								<a href="http://kdt.im/W89Mszv9l" target="_blank">
+									<span class="help-icon"></span> 图文素材简介及使用教程
+								</a>
+							</div>
+						</nav>
+						<div class="app__content js-app-main">
+							<div class="app-design clearfix without-add-region">
+								<div class="alert">
+									由于微信公众平台的接口规范，仅提供向微信认证服务号商户，提供群发接口。如您的公众号同时具有微信支付权限，您还可以在正文内添加超级链接。
+								</div>
+								<div class="app-preview">
+									<div class="app-header"></div>
+									<div class="app-entry">
+										<div class="app-config js-config-region">
+											<div class="app-field clearfix">
+												<h1><span>微信图文</span></h1>
+											</div>
+										</div>
+
+										<div class="app-fields appmsg-single js-fields-region">
+											<div class="app-fields ui-sortable">
+												<div class="app-field clearfix not-sortable js-not-sortable editing">
+													<div class="appmsg appmsg-multiple-first">
+														<h4 class="appmsg-title">标题</h4>
+														<p class="appmsg-meta">2015-12-23</p>
+														<div class="appmsg-thumb-wrap">
+
+															<p>封面图片</p>
+
+														</div>
+														<div class="appmsg-digest">
+
+														</div>
+
+														<div class="appmsg-view-full clearfix">
+															<span>阅读全文</span>
+															<span class="pull-right">&gt;</span>
+														</div>
+													</div>
+
+													<div class="actions">
+														<div class="actions-wrap">
+															<span class="action edit">编辑</span>
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="app-sidebar" style="margin-top: 146px;">
+									<div class="arrow"></div>
+
+									<div class="app-sidebar-inner app-sidebar-single js-sidebar-region">
+										<div class="edit-rich-text">
+											<form class="form-horizontal" novalidate="">
+
+												<div class="control-group">
+													<label>标题</label>
+													<input type="text" name="title" value="" data-error-style="block">
+												</div>
+
+												<div class="control-group">
+													<label>作者<span class="label-desc">（选填）</span></label>
+													<input type="text" name="author" value="" data-error-style="block">
+												</div>
+
+												<div class="control-group image-region js-image-region">
+													<div>
+														<label>封面<span class="label-desc">（图片建议尺寸：900 x 500像素）</span></label>
+
+														<a class="js-add-image control-action" href="javascript:;">添加图片...</a>
+
+														<input type="hidden" name="image" data-error-style="block">
+													</div>
+												</div>
+
+												<div class="control-group">
+													<label class="checkbox">
+														<input type="checkbox" name="show_image">封面图片显示在正文中
+													</label>
+												</div>
+
+												<div class="control-group digest">
+													<label>摘要</label>
+													<textarea name="digest" cols="30" rows="3" data-error-style="block"></textarea>
+												</div>
+
+												<div class="control-group">
+													<label>正文</label>
+													<script id="editor" type="text/plain" style="width:445px;height:500px;"></script>
+													<input type="hidden" name="content" data-error-style="block">
+
+												</div>
+
+												<div class="control-group js-link-region">
+													<div>
+														<label>阅读原文</label>
+														<div class="dropup hover">
+															<a class="js-dropdown-toggle dropdown-toggle control-action" href="javascript:void(0);">设置链接到的页面地址 <i
+																 class="caret"></i></a>
+															<ul class="dropdown-menu">
+																<li>
+																	<a class="js-modal-magazine" data-type="feature" href="javascript:void(0);">微页面及分类</a>
+																</li>
+																<li>
+																	<a class="js-modal-goods" data-type="goods" href="javascript:void(0);">商品及分类</a>
+																</li>
+																<li>
+																	<a class="js-modal-activity" data-type="activity" href="javascript:void(0);">营销活动</a>
+																</li>
+																<li>
+																	<a class="js-modal-survey" data-type="survey" href="javascript:void(0);">投票调查</a>
+																</li>
+
+																<li>
+																	<a class="js-modal-homepage" data-type="homepage" href="javascript:void(0);">店铺主页</a>
+																</li>
+																<li>
+																	<a class="js-modal-usercenter" data-type="usercenter" href="javascript:void(0);">会员主页</a>
+																</li>
+																<li>
+																	<a class="js-modal-links" data-type="links" href="javascript:void(0);">自定义外链</a>
+																</li>
+															</ul>
+
+														</div>
+
+													</div>
+												</div>
+												<textarea name="editorValue" id="ueditor_textarea_editorValue" style="display: none;"></textarea>
+											</form>
+										</div>
+									</div>
+
+								</div>
+								<div class="app-actions" style="bottom: 0px;">
+									<div class="form-actions text-center">
+										<input class="btn btn-primary btn-add" type="submit" value="上 架" data-loading-text="上架...">
+
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="notify-bar js-notify animated hinge hide">
+					</div>
+				</div>
+			</div>
+			<aside class="ui-sidebar sidebar" style="min-height: 400px;">
+				<nav>
+
+					<h4>消息推送</h4>
+					<ul>
+						<li class="active">
+							<a href="//koudaitong.com/v2/weixin/imagetext">图文素材</a>
+						</li>
+
+						<li>
+							<a href="//koudaitong.com/v2/weixin/autoreply/normal">自动回复</a>
+						</li>
+
+						<li>
+							<a href="//koudaitong.com/v2/message/quickreply">快捷短语</a>
+						</li>
+
+					</ul>
+
+					<h4>高级</h4>
+					<ul>
+						<li>
+							<a href="//koudaitong.com/v2/weixin/shopmenu">自定义菜单</a>
+						</li>
+					</ul>
+
+				</nav>
+			</aside>
+		</div>
+		<!-- ▲ Main container -->
+
+		<div class="js-notifications notifications"></div>
+
+		<div id="js-page-help-open-btn" class="ui-page-help-open-btn">
+			<div class="ui-page-help-open-btn-icon"></div>
+			<div class="">帮助</div>
+		</div>
+
+		<div id="js-page-help-container" class="ui-page-help-container" style="margin-bottom: -98px;">
+			<div class="js-page-help-content ui-page-help-content" style="height: 150px;">
+				<p><strong><span style="color:#ff0000">图文素材是什么？</span></strong></p>
+				<p>有赞后台的图文素材分为高级图文（不可群发）和微信图文（可以群发），可以用于自动回复、一对一回复、自定义菜单等。</p>
+				<hr>
+				<p></p>
+				<p class="p1"><a href="http://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=20002&amp;extra=page%3D1" target="_blank"
+					 style="line-height: 1.5;">如何创建图文素材？</a></p>
+				<p class="p1" style="white-space: normal;"><span style="white-space: nowrap;"><a href="http://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=87&amp;extra=page%3D14"
+						 target="_blank">关于图文素材要知道的一些事情</a></span></p>
+			</div>
+			<div class="js-page-help-btn-action ui-page-help-btn-action">
+				<a href="//koudaitong.com/v2/service" class="ui-btn ui-btn-primary" target="_blank">进入帮助中心</a>
+				<a href="http://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=51125" class="ui-btn ui-btn-default" target="_blank"
+				 style="width:72px">建议反馈</a>
+				<!-- <a class="ui-btn" target="_blank" href="http://help.im.koudaitong.com">在线客服</a> -->
+
+			</div>
+		</div>
+
+		<div class="widget-notice-center">
+			<div class="widget-notice-center-ring-wrap js-notice-center-ring">
+				<div class="widget-notice-center-ring"></div>
+				<div class="widget-notice-center-txt">消息</div>
+			</div>
+			<div class="widget-notice-center-wrapper js-notice-center-wrapper ">
+				<div class="js-list-header-region">
+					<div class="widget-list-item">
+						<div class="widget-notice-center-title clearfix">
+							<h3 class="pull-left">
+								系统通知
+
+							</h3>
+							<a href="javascript:;" class="js-close pull-right">收起 》</a>
+						</div>
+					</div>
+				</div>
+				<div class="js-list-empty-region">
+					<div>
+						<div class="notice-empty">没有发现新信息</div>
+					</div>
+				</div>
+				<ul class="js-list-body-region widget-notice-center-content"></ul>
+				<div class="js-list-footer-region">
+					<div class="widget-list-footer">
+						<div class="widget-notice-center-footer">
+							<a href="javascript:;" class="mark-all-as-read js-mark-all-as-read">全部标记已读</a>
+							<a href="//koudaitong.com/v2/notice/dashboard" class="pull-right">查看全部信息</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+		<script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+		<!--<script type="text/javascript" src="js/jBox.min.js" ></script>-->
+		<script type="text/javascript" src="popmodal/popModal.js"></script>
+		<script type="text/javascript" src="js/lib/ueditor.config.js"></script>
+
+		<script type="text/javascript" src="js/lib/ueditor.all.min.js"></script>
+		<script type="text/javascript" src="js/lib/lang/zh-cn/zh-cn.js"></script>
+		<script language="JavaScript">
+			var ue = UE.getEditor('editor');
+		</script>
+		<script language="JavaScript">
+			function date2str(x, y) {
+				var z = {
+					M: x.getMonth() + 1,
+					d: x.getDate(),
+					h: x.getHours(),
+					m: x.getMinutes(),
+					s: x.getSeconds()
+				};
+				y = y.replace(/(M+|d+|h+|m+|s+)/g, function(v) {
+					return ((v.length > 1 ? "0" : "") + eval('z.' + v.slice(-1))).slice(-2)
+				});
+				return y.replace(/(y+)/g, function(v) {
+					return x.getFullYear().toString().slice(-v.length)
+				});
+			}
+			date2str(new Date(), "yyyy-MM-dd hh:mm:ss")
+
+			//"+date2str(new Date(),'yyyy-MM-dd hh:mm:ss')+"
+			$(function() {
+				$(".appmsg-meta").text(date2str(new Date(), 'yyyy-MM-dd'))
+				$("input[name='author']").on("click", function() {
+					var margintop = $(".app-sidebar").css("margin-top");
+					var marginone = parseInt(margintop)
+					var maindex = (parseInt(margintop) - 317) / 61 + 2
+					if (marginone == 146) {
+						var inpuval = $("input[name='title']").val();
+						$(".app-field:eq(1)").find(".appmsg-title").text(inpuval)
+					}
+					if (maindex >= 0) {
+						//						$(".app-field:eq(" + maindex + ")").find(".appmsg-title").text();
+						var inpuval = $("input[name='title']").val();
+						$(".app-field:eq(" + maindex + ")").find(".appmsg-title").text(inpuval);
+					}
+					var digestval = $("textarea[name='digest']").val();
+					$(".appmsg-digest").text(digestval)
+					event.stopPropagation();
+				})
+			})
+		</script>
+
+	</body>
+
+</html>

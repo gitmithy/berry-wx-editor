@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="renderer" content="webkit">
+		<meta name="referrer" content="always">
+
+		<title id="js-meta-title">
+			快捷短语 - 飞煌微信分销</title>
+
+		<link rel="icon" href="https://b.yzcdn.cn/v2/image/yz_fc.ico">
+
+		<meta name="keywords" content="有赞,微信商城,粉丝营销,微信商城运营">
+		<meta name="description" content="有赞是帮助商家在微信上搭建微信商城的平台，提供店铺、商品、订单、物流、消息和客户的管理模块，同时还提供丰富的营销应用和活动插件。">
+
+		<link rel="stylesheet" href="css/lib/chosen.jquery.20150826.min.css" />
+		<link rel="stylesheet" href="css/lib/jquery.ui.20151022.min.css" />
+		<link rel="stylesheet" href="css/lib/bootstrap_140705.min.css" />
+		<link rel="stylesheet" href="css/lib/pc_62aa96d559.css" />
+		<link rel="stylesheet" href="css/quick_reply_88037dc212.css" />
+		<link rel="stylesheet" href="popmodal/popModal.css" />
+		<link rel="stylesheet" href="css/jBox.css" />
+		<style>
+			.popModal .close {
+				display: none !important;
+			}		
+			.modal {
+				margin-left: 0px !important;
+			}
+			#mcover {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(255, 255, 255, 0.8);
+				display: none;
+				z-index: 20000;
+			}			
+		</style>
+	</head>
+
+	<body>
+
+
+
+		<!--<img src="img/guide.png">-->
+		<div style="border: 1px solid rgba(0,0,0,.3);box-shadow: 0 3px 7px rgba(0,0,0,.3); width: 45%; color: #000; margin: 0 auto; margin-top: 10%; background-color:#fff ; border-radius: 5px 5px 5px 5px; padding: 10px 15px;">
+			<div class="modalcon">
+				<div class="modal-header"><a class="close" data-dismiss="modal">×</a>
+					<h3 class="title">新建快捷短语</h3>
+				</div>
+				<div class="modal-body">
+					<div class="js-editor-region">
+						<div class="simple-editor">
+							<div class="tab-content">
+								<div class="tab-pane active" id="editor-text">
+									<div class="inputer vbox">
+										<div class="inputer-area vbox"><textarea maxlength="600" class="js-inputer-txta transparent-txta" cols="30"
+											 rows="1" placeholder=""></textarea></div>
+										<div class="inputer-actions">
+											<ul class="simple-editor-nav">
+												<li>
+													<div data-popover-name="emoticon" class="js-editor-popover inputer-action inputer-action-emoticon"><a href="javascript:;"><i
+															 class="ico-simple-editor ico-editor-emoticon"></i> <span>表情</span></a>
+														<div class="popover bottom fade in">
+															<div class="arrow"></div>
+															<div class="js-region-emoticon popover-content"></div>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div data-popover-name="hyperlink" class="js-editor-popover inputer-action inputer-action-hyperlink"><a
+														 href="javascript:;"><i class="ico-simple-editor ico-editor-hyperlink"></i> <span>超链接</span></a>
+														<div class="popover bottom fade in">
+															<div class="arrow"></div>
+															<div class="js-region-hyperlink popover-content">
+																<div class="hyperlink"><input class="js-txt input-large txt" type="text" placeholder="http://"> <button
+																	 type="submit" class="js-btn-ok btn btn-primary">确定</button></div>
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+											<div class="word-counter"><span>大约还可输入<i class="js-word-counter">600</i>字</span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer"><button type="button" class="js-btn-ok btn btn-primary" data-loading-text="保存中...">保存</button>
+					<button type="button" class="btn" data-dismiss="modal" aria-hidden="true">取消</button></div>
+			</div>
+
+		</div>
+
+		<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+		<script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/jBox.min.js"></script>
+		<script type="text/javascript" src="popmodal/popModal.js"></script>
+
+		<script language="JavaScript">
+			function date2str(x, y) {
+				var z = {
+					M: x.getMonth() + 1,
+					d: x.getDate(),
+					h: x.getHours(),
+					m: x.getMinutes(),
+					s: x.getSeconds()
+				};
+				y = y.replace(/(M+|d+|h+|m+|s+)/g, function(v) {
+					return ((v.length > 1 ? "0" : "") + eval('z.' + v.slice(-1))).slice(-2)
+				});
+				return y.replace(/(y+)/g, function(v) {
+					return x.getFullYear().toString().slice(-v.length)
+				});
+			}
+			date2str(new Date(), "yyyy-MM-dd hh:mm:ss")
+
+
+			var emtioncon =
+				"<div class=\"emoticon\"><ul class=\"emoticon-list\"><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/01.png\" alt=\"微笑\" title=\"微笑\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/02.png\" alt=\"撇嘴\" title=\"撇嘴\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/03.png\" alt=\"色\" title=\"色\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/04.png\" alt=\"发呆\" title=\"发呆\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/05.png\" alt=\"得意\" title=\"得意\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/06.png\" alt=\"流泪\" title=\"流泪\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/07.png\" alt=\"害羞\" title=\"害羞\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/08.png\" alt=\"闭嘴\" title=\"闭嘴\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/09.png\" alt=\"睡\" title=\"睡\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/10.png\" alt=\"大哭\" title=\"大哭\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/11.png\" alt=\"尴尬\" title=\"尴尬\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/12.png\" alt=\"发怒\" title=\"发怒\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/13.png\" alt=\"调皮\" title=\"调皮\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/14.png\" alt=\"呲牙\" title=\"呲牙\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/15.png\" alt=\"惊讶\" title=\"惊讶\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/16.png\" alt=\"难过\" title=\"难过\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/17.png\" alt=\"酷\" title=\"酷\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/18.png\" alt=\"冷汗\" title=\"冷汗\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/19.png\" alt=\"抓狂\" title=\"抓狂\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/20.png\" alt=\"吐\" title=\"吐\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/21.png\" alt=\"偷笑\" title=\"偷笑\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/22.png\" alt=\"愉快\" title=\"愉快\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/23.png\" alt=\"白眼\" title=\"白眼\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/24.png\" alt=\"傲慢\" title=\"傲慢\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/25.png\" alt=\"饥饿\" title=\"饥饿\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/26.png\" alt=\"困\" title=\"困\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/27.png\" alt=\"惊恐\" title=\"惊恐\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/28.png\" alt=\"流汗\" title=\"流汗\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/29.png\" alt=\"憨笑\" title=\"憨笑\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/30.png\" alt=\"悠闲\" title=\"悠闲\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/31.png\" alt=\"奋斗\" title=\"奋斗\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/32.png\" alt=\"咒骂\" title=\"咒骂\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/33.png\" alt=\"疑问\" title=\"疑问\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/34.png\" alt=\"嘘\" title=\"嘘\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/35.png\" alt=\"晕\" title=\"晕\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/36.png\" alt=\"疯了\" title=\"疯了\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/37.png\" alt=\"衰\" title=\"衰\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/38.png\" alt=\"骷髅\" title=\"骷髅\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/39.png\" alt=\"敲打\" title=\"敲打\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/40.png\" alt=\"再见\" title=\"再见\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/41.png\" alt=\"擦汗\" title=\"擦汗\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/42.png\" alt=\"抠鼻\" title=\"抠鼻\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/43.png\" alt=\"鼓掌\" title=\"鼓掌\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/44.png\" alt=\"糗大了\" title=\"糗大了\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/45.png\" alt=\"坏笑\" title=\"坏笑\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/46.png\" alt=\"左哼哼\" title=\"左哼哼\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/47.png\" alt=\"右哼哼\" title=\"右哼哼\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/48.png\" alt=\"哈欠\" title=\"哈欠\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/49.png\" alt=\"鄙视\" title=\"鄙视\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/50.png\" alt=\"委屈\" title=\"委屈\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/51.png\" alt=\"快哭了\" title=\"快哭了\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/52.png\" alt=\"阴险\" title=\"阴险\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/53.png\" alt=\"亲亲\" title=\"亲亲\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/54.png\" alt=\"吓\" title=\"吓\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/55.png\" alt=\"可怜\" title=\"可怜\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/56.png\" alt=\"菜刀\" title=\"菜刀\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/57.png\" alt=\"西瓜\" title=\"西瓜\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/58.png\" alt=\"啤酒\" title=\"啤酒\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/59.png\" alt=\"篮球\" title=\"篮球\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/60.png\" alt=\"乒乓\" title=\"乒乓\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/61.png\" alt=\"咖啡\" title=\"咖啡\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/62.png\" alt=\"饭\" title=\"饭\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/63.png\" alt=\"猪头\" title=\"猪头\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/64.png\" alt=\"玫瑰\" title=\"玫瑰\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/65.png\" alt=\"凋谢\" title=\"凋谢\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/66.png\" alt=\"嘴唇\" title=\"嘴唇\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/67.png\" alt=\"爱心\" title=\"爱心\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/68.png\" alt=\"心碎\" title=\"心碎\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/69.png\" alt=\"蛋糕\" title=\"蛋糕\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/70.png\" alt=\"闪电\" title=\"闪电\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/71.png\" alt=\"炸弹\" title=\"炸弹\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/72.png\" alt=\"刀\" title=\"刀\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/73.png\" alt=\"足球\" title=\"足球\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/74.png\" alt=\"瓢虫\" title=\"瓢虫\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/75.png\" alt=\"便便\" title=\"便便\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/76.png\" alt=\"月亮\" title=\"月亮\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/77.png\" alt=\"太阳\" title=\"太阳\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/78.png\" alt=\"礼物\" title=\"礼物\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/79.png\" alt=\"拥抱\" title=\"拥抱\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/80.png\" alt=\"强\" title=\"强\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/81.png\" alt=\"弱\" title=\"弱\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/82.png\" alt=\"握手\" title=\"握手\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/83.png\" alt=\"胜利\" title=\"胜利\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/84.png\" alt=\"抱拳\" title=\"抱拳\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/85.png\" alt=\"勾引\" title=\"勾引\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/86.png\" alt=\"拳头\" title=\"拳头\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/87.png\" alt=\"差劲\" title=\"差劲\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/88.png\" alt=\"爱你\" title=\"爱你\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/89.png\" alt=\"NO\" title=\"NO\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/90.png\" alt=\"OK\" title=\"OK\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/91.png\" alt=\"爱情\" title=\"爱情\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/92.png\" alt=\"飞吻\" title=\"飞吻\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/93.png\" alt=\"跳跳\" title=\"跳跳\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/94.png\" alt=\"发抖\" title=\"发抖\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/95.png\" alt=\"怄火\" title=\"怄火\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/96.png\" alt=\"转圈\" title=\"转圈\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/97.png\" alt=\"磕头\" title=\"磕头\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/98.png\" alt=\"回头\" title=\"回头\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/99.png\" alt=\"跳绳\" title=\"跳绳\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/100.png\" alt=\"投降\" title=\"投降\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/101.png\" alt=\"激动\" title=\"激动\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/102.png\" alt=\"乱舞\" title=\"乱舞\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/103.png\" alt=\"献吻\" title=\"献吻\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/104.png\" alt=\"左太极\" title=\"左太极\"><\/li><li><img src=\"https://b.yzcdn.cn/v2/image/emoticons/105.png\" alt=\"右太极\" title=\"右太极\"><\/li><\/ul><\/div>";
+			var hyperlink =
+				"<div class=\"js-region-hyperlink popover-content\"><div class=\"hyperlink\"><input class=\"js-txt input-large txt\" type=\"text\" placeholder=\"http://\"> <button type=\"submit\" class=\"js-btn-ok btn btn-primary\">确定<\/button><\/div><\/div>";
+			var newdy =
+				"<div class=\"modal-header\"><a class=\"close\" data-dismiss=\"modal\">×<\/a><h3 class=\"title\">新建快捷短语<\/h3><\/div><div class=\"modal-body\"><div class=\"js-editor-region\"><div class=\"simple-editor\"><div class=\"tab-content\"><div class=\"tab-pane active\" id=\"editor-text\"><div class=\"inputer vbox\"><div class=\"inputer-area vbox\"><textarea maxlength=\"600\" class=\"js-inputer-txta transparent-txta\" cols=\"30\" rows=\"1\" placeholder=\"\"><\/textarea><\/div><div class=\"inputer-actions\"><ul class=\"simple-editor-nav\"><li><div data-popover-name=\"emoticon\" class=\"js-editor-popover inputer-action inputer-action-emoticon\"><a href=\"javascript:;\"><i class=\"ico-simple-editor ico-editor-emoticon\"><\/i> <span>表情<\/span><\/a><div class=\"popover bottom fade in\"><div class=\"arrow\"><\/div><div class=\"js-region-emoticon popover-content\"><\/div><\/div><\/div><\/li><li><div data-popover-name=\"hyperlink\" class=\"js-editor-popover inputer-action inputer-action-hyperlink\"><a href=\"javascript:;\"><i class=\"ico-simple-editor ico-editor-hyperlink\"><\/i> <span>超链接<\/span><\/a><div class=\"popover bottom fade in\"><div class=\"arrow\"><\/div><div class=\"js-region-hyperlink popover-content\"><div class=\"hyperlink\"><input class=\"js-txt input-large txt\" type=\"text\" placeholder=\"http://\"> <button type=\"submit\" class=\"js-btn-ok btn btn-primary\">确定<\/button><\/div><\/div><\/div><\/div><\/li><\/ul><div class=\"word-counter\"><span>大约还可输入<i class=\"js-word-counter\">600<\/i>字<\/span><\/div><\/div><\/div><\/div><\/div><\/div><\/div><\/div><div class=\"modal-footer\"><button type=\"button\" class=\"js-btn-ok btn btn-primary\" data-loading-text=\"保存中...\">保存<\/button> <button type=\"button\" class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">取消<\/button><\/div>";
+
+			//			$('.js-create').jBox('Modal', {
+			//			    
+			//			    content: newdy
+			//			});	
+			//			创建弹窗
+			$(document).on("click", ".js-create", function() {
+				var itemlen = $(".widget-list-item").length
+				if (itemlen >= 20) {
+					alert("超过限制")
+				} else {
+					$(".modalcon").html(newdy)
+					$('#mcover').show();
+				}
+
+			})
+			//			input获得焦点
+			$(document).on("focus", "textarea", function() {
+				$(".popModal_content").prev(".close").trigger("click")
+			})
+			//			关闭弹出
+			$(document).on("click", ".modal-header .close", function() {
+				$('#mcover').hide();
+			})
+			//			弹出表情添加
+			$(document).on("click", ".inputer-action-emoticon", function() {
+				$(this).popModal({
+					html: emtioncon,
+					placement: 'bottomCenter',
+					showCloseBut: true
+				});
+			})
+			//			弹出链接添加
+			$(document).on("click", ".inputer-action-hyperlink", function() {
+				$(this).popModal({
+					html: hyperlink,
+					placement: 'bottomCenter',
+					showCloseBut: true
+				});
+			})
+			//			表情添加
+			$(document).on("click", ".emoticon-list>li", function() {
+				var emtiontitle = $(this).find("img").attr("alt")
+				//				alert(emtiontitle)
+				var inputval = $(this).parents(".inputer").find("textarea").val()
+				$(this).parents(".inputer").find("textarea").val(inputval + "[" + emtiontitle + "]")
+
+			})
+			//			链接添加
+			$(document).on("click", ".js-btn-ok", function() {
+				var linktitle = $(this).prev("input").val()
+				//				alert(emtiontitle)
+				var inputval = $(this).parents(".inputer").find("textarea").val()
+				$(this).parents(".inputer").find("textarea").val(inputval + "http://" + linktitle)
+			})
+			//			添加快捷
+			$(document).on("click", ".modal-footer .js-btn-ok", function() {
+				var inputval = $(this).parent(".modal-footer").prev(".modal-body").find("textarea").val()
+				var inputadd = "<tr class=\"widget-list-item\"><td><div class=\"item-type-text\"><pre>" + inputval +
+					"<\/pre><\/div><\/td><td>飞煌<\/td><td>" + date2str(new Date(), 'yyyy-MM-dd hh:mm:ss') +
+					"<\/td><td class=\"text-right\"><div><a href=\"javascript:;\" class=\"js-edit\">编辑<\/a> <span>-<\/span> <a href=\"javascript:;\" class=\"js-delete\">删除<\/a><\/div><div>序号：<a class=\"js-change-num\" href=\"javascript:;\">0<\/a> <input class=\"input-mini js-input-num\" type=\"number\" min=\"0\" maxlength=\"8\" style=\"display:none\" value=\"0\"><\/div><\/td><\/tr>";
+				$(".js-list-body-region").append(inputadd)
+				$(".modalcon").empty()
+				gpnum()
+				$('#mcover').hide();
+
+			})
+			//			删除按钮
+			$(document).on("click", ".js-delete", function() {
+				$(this).parents(".widget-list-item").remove()
+				gpnum();
+			})
+			//			编辑按钮
+			$(document).on("click", ".js-edit", function() {
+				$(".modalcon").empty();
+				var editdy =
+					"<div class=\"modal-header\"><a class=\"close\" data-dismiss=\"modal\">×<\/a><h3 class=\"title\">新建快捷短语<\/h3><\/div><div class=\"modal-body\"><div class=\"js-editor-region\"><div class=\"simple-editor\"><div class=\"tab-content\"><div class=\"tab-pane active\" id=\"editor-text\"><div class=\"inputer vbox\"><div class=\"inputer-area vbox\"><textarea maxlength=\"600\" class=\"js-inputer-txta transparent-txta\" cols=\"30\" rows=\"1\" placeholder=\"\"><\/textarea><\/div><div class=\"inputer-actions\"><ul class=\"simple-editor-nav\"><li><div data-popover-name=\"emoticon\" class=\"js-editor-popover inputer-action inputer-action-emoticon\"><a href=\"javascript:;\"><i class=\"ico-simple-editor ico-editor-emoticon\"><\/i> <span>表情<\/span><\/a><div class=\"popover bottom fade in\"><div class=\"arrow\"><\/div><div class=\"js-region-emoticon popover-content\"><\/div><\/div><\/div><\/li><li><div data-popover-name=\"hyperlink\" class=\"js-editor-popover inputer-action inputer-action-hyperlink\"><a href=\"javascript:;\"><i class=\"ico-simple-editor ico-editor-hyperlink\"><\/i> <span>超链接<\/span><\/a><div class=\"popover bottom fade in\"><div class=\"arrow\"><\/div><div class=\"js-region-hyperlink popover-content\"><div class=\"hyperlink\"><input class=\"js-txt input-large txt\" type=\"text\" placeholder=\"http://\"> <button type=\"submit\" class=\"js-btn-ok btn btn-primary\">确定<\/button><\/div><\/div><\/div><\/div><\/li><\/ul><div class=\"word-counter\"><span>大约还可输入<i class=\"js-word-counter\">600<\/i>字<\/span><\/div><\/div><\/div><\/div><\/div><\/div><\/div><\/div><div class=\"modal-footer\"><button type=\"button\" class=\"js-btn-ok btn btn-primary\" data-loading-text=\"保存中...\">保存<\/button> <button type=\"button\" class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">取消<\/button><\/div>";
+				var dycon = $(this).parents(".widget-list-item").find("pre").text();
+
+				$(".modalcon").html(editdy);
+				$("textarea").val(dycon)
+				$('#mcover').show();
+
+			})
+			//			更改数量
+			function gpnum() {
+				//				var grouplength = $(".rule-group").length
+				//				for (var groupnum = 0; groupnum < grouplength; groupnum++) {
+				//					$(".rule-id:eq(" + groupnum + ")").html(groupnum + 1)
+				//				}
+				var widgetlen = $(".js-list-body-region .item-type-text").length
+				//
+				var totalgroup = "共 " + widgetlen + " 条，每页 20 条"
+				$(".total").html(totalgroup)
+			}
+			gpnum()
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="renderer" content="webkit">
+		<meta name="referrer" content="always">
+
+		<title id="js-meta-title">
+			图文素材 - 飞煌微信分销</title>
+
+		<link rel="icon" href="https://b.yzcdn.cn/v2/image/yz_fc.ico">
+
+		<meta name="keywords" content="有赞,微信商城,粉丝营销,微信商城运营">
+		<meta name="description" content="有赞是帮助商家在微信上搭建微信商城的平台，提供店铺、商品、订单、物流、消息和客户的管理模块，同时还提供丰富的营销应用和活动插件。">
+		<link rel="stylesheet" href="css/lib/chosen.jquery.20150826.min.css" />
+		<link rel="stylesheet" href="css/lib/jquery.ui.20151022.min.css" />
+		<link rel="stylesheet" href="css/lib/bootstrap_140705.min.css" />
+		<link rel="stylesheet" href="css/lib/pc_62aa96d559.css" />
+		<link rel="stylesheet" href="css/jBox.css" />
+		<link rel="stylesheet" href="css/image_text_28e2a4d1aa.css" />
+		<link rel="stylesheet" href="popmodal/popModal.css" />
+		<style>
+			.popModal .close {
+				display: none !important;
+			}		
+			.modal {
+				margin-left: 0px !important;
+			}
+			#mcover {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(255, 255, 255, 0.8);
+				display: none;
+				z-index: 20000;
+			}			
+		</style>
+	</head>
+
+	<body class="theme theme--blue">
+
+		<!-- ▼ Main header -->
+		<header class="ui-header">
+			<div class="ui-header-inner clearfix">
+				<h1 class="ui-header-logo">
+					<a href="//koudaitong.com/v2/dashboard/index" title="有赞">
+						<span class="version"><i>3.0</i></span>
+					</a>
+				</h1>
+				<nav class="ui-header-nav">
+					<ul class="clearfix">
+						<li class="divide">|</li>
+						<li>
+							<a href="//koudaitong.com/v2/showcase/dashboard">店铺</a>
+						</li>
+						<li>
+							<a href="//koudaitong.com/v2/showcase/goods">商品</a>
+						</li>
+						<li>
+							<a href="//koudaitong.com/v2/trade/dashboard">订单</a>
+						</li>
+						<li class="divide">|</li>
+
+						<li class="js-weixin-notify active">
+							<a href="//koudaitong.com/v2/weixin/autoreply/normal">微信<sup class="notify-counter" style="visibility: hidden;"></sup></a>
+						</li>
+
+						<li class="js-weibo-notify">
+							<a href="//koudaitong.com/v2/sinaweibo/timeline/index">微博<sup class="notify-counter" style="visibility: hidden;"></sup></a>
+						</li>
+
+						<li class="divide">|</li>
+						<li>
+							<a href="//koudaitong.com/v2/ump/dashboard">应用和营销</a>
+						</li>
+						<li class="divide">|</li>
+
+						<li>
+							<a href="//koudaitong.com/v2/statcenter/dashboard">数据中心</a>
+						</li>
+						<li class="divide">|</li>
+
+						<li><a href="http://bbs.youzan.com/forum.php" target="_blank">商家社区</a></li>
+					</ul>
+				</nav>
+				<div class="ui-header-user ">
+					<div class="customer-wrap">
+					</div>
+					<div class="dropdown hover dropdown-right">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<span class="txt">
+								<span class="ellipsis team_name">飞煌微信分销</span><span class="dash"> - </span>设置
+							</span>
+							<i class="caret"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="//koudaitong.com/v2/account/team#select">切换店铺</a></li>
+							<li class="divide"></li>
+
+							<li><a href="//koudaitong.com/v2/setting/store">店铺设置</a></li>
+							<li><a href="//koudaitong.com/v2/account/personal">账号设置</a></li>
+							<li class="divide"></li>
+
+							<li><span>15007102058</span></li>
+							<li><a href="//koudaitong.com/v2/account/user/logout">退出</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- ▲ Main header -->
+
+		<!-- ▼ Main container -->
+		<div class="container">
+			<div class="app">
+				<div class="app-inner clearfix">
+					<div class="app-init-container">
+						<p class="alert" style="margin-bottom:10px;"><a href="http://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=92234&amp;extra=page%3D1"
+							 target="_blank">有赞微商城微页面和微信图文使用规范</a></p>
+						<nav class="ui-nav clearfix">
+							<ul class="pull-left">
+								<li id="js-nav-list-index" class="active">
+									<a href="//koudaitong.com/v2/weixin/imagetext#list">微信图文</a>
+								</li>
+								<li>
+									<a href="//koudaitong.com/v2/weixin/advancednews#list">高级图文</a>
+								</li>
+							</ul>
+							<div class="common-helps-entry pull-right">
+								<a href="http://kdt.im/W89Mszv9l" target="_blank">
+									<span class="help-icon"></span> 图文素材简介及使用教程
+								</a>
+							</div>
+						</nav>
+						<div class="app__content js-app-main">
+							<div class="widget-list">
+								<div class="js-list-filter-region clearfix ui-box" style="position: relative;">
+									<div class="widget-list-filter"><a href="javascript:;" class="ui-btn ui-btn-success js-create-template">新建图文</a>
+									</div>
+								</div>
+								<div class="ui-box">
+									<table class="ui-table ui-table-list" style="padding: 0px;">
+										<thead class="js-list-header-region tableFloatingHeader" style="">
+											<tr class="widget-list-header">
+												<th class="cell-25">标题</th>
+												<th class="cell-12"><a href="javascript:;" data-orderby="created_time">创建时间<span class="orderby-arrow desc"></span></a></th>
+												<th class="cell-12"><a href="javascript:;" data-orderby="last_send_time">上次发送</a></th>
+												<th class="cell-25 text-right">操作</th>
+											</tr>
+										</thead>
+										<tbody class="js-list-body-region">
+											<tr class="widget-list-item">
+												<td>
+
+													<div class="ng">
+														<div class="ng-item">
+															<div class="td-cont with-label">
+																<span class="label label-success">图文</span>
+																<div class="text">
+																	<a href="https://wap.koudaitong.com/v2/showcase/mpnews?alias=3zwr5i0s" target="_blank" class="new-window"
+																	 title="demo">
+																		demo
+																	</a>
+																</div>
+															</div>
+														</div>
+														<div class="ng-item view-more">
+															<a href="https://wap.koudaitong.com/v2/showcase/mpnews?alias=3zwr5i0s" target="_blank" class="td-cont clearfix new-window">
+																<span class="pull-left">阅读全文</span>
+																<span class="pull-right">&gt;</span>
+															</a>
+														</div>
+													</div>
+
+												</td>
+												<td>2015-12-11 10:01:14</td>
+												<td>无</td>
+												<td class="text-right">
+
+													<a href="//koudaitong.com/v2/weixin/imagetext#edit/0/25658645">编辑</a>
+
+													<span>-</span>
+													<a href="javascript:void(0);" class="js-delete">删除</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="js-list-empty-region"></div>
+								</div>
+								<div class="js-list-footer-region ui-box">
+									<div class="widget-list-footer">
+										<div class="pagenavi"> <span class="total">共 2 条，每页 20 条</span>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="notify-bar js-notify animated hinge hide">
+					</div>
+				</div>
+			</div>
+			<aside class="ui-sidebar sidebar" style="min-height: 625px;">
+				<nav>
+
+					<h4>消息推送</h4>
+					<ul>
+						<li class="active">
+							<a href="//koudaitong.com/v2/weixin/imagetext">图文素材</a>
+						</li>
+
+						<li>
+							<a href="//koudaitong.com/v2/weixin/autoreply/normal">自动回复</a>
+						</li>
+
+						<li>
+							<a href="//koudaitong.com/v2/message/quickreply">快捷短语</a>
+						</li>
+
+					</ul>
+
+					<h4>高级</h4>
+					<ul>
+						<li>
+							<a href="//koudaitong.com/v2/weixin/shopmenu">自定义菜单</a>
+						</li>
+					</ul>
+
+					<div style="margin-bottom: 30px">
+						<a href="http://bbs.youzan.com/forum.php?mod=forumdisplay&amp;fid=53&amp;filter=typeid&amp;typeid=32" target="_blank">
+							<img src="https://dn-kdt-img.qbox.me/public_files/2015/09/17/478dbf60d04dfedeb7ac5558d845ebc9.jpg">
+						</a>
+					</div>
+
+				</nav>
+				<footer class="ui-footer">
+					<a href="//youzan.com/" target="_blank">
+						<i>©</i>youzan.com
+					</a>
+				</footer>
+			</aside>
+		</div>
+		<!-- ▲ Main container -->
+		<div class="popover bottom left-bottom" style="display: none; top: 208px; left: 405px;">
+			<div class="popover-inner popover-image-text">
+				<div class="popover-content">
+					<div class="alert">
+
+						该类型可用于群发。关键词、扫码、自定义菜单等回复，推荐使用“高级图文”。
+						<a class="new-window" href="http://kdt.im/YMm0uLOmo" target="_blank">查看详情</a>
+
+					</div>
+					<ul class="clearfix">
+						<li class="single-image-text">
+							<a href="//koudaitong.com/v2/weixin/imagetext#create/0">
+								<p>单条图文</p>
+								<div class="image-text-color-block"></div>
+							</a>
+						</li>
+						<li class="multi-image-text">
+							<a href="//koudaitong.com/v2/weixin/imagetext#create/1">
+								<p>多条图文</p>
+								<div class="image-text-color-block"></div>
+								<div class="image-text-color-block"></div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+		<script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="popmodal/popModal.js"></script>
+		<script language="JavaScript">
+			var menubox =
+				"<div class=\"popover-inner popover-image-text\"><div class=\"popover-content\"><div class=\"alert\">该类型可用于群发。关键词、扫码、自定义菜单等回复，推荐使用“高级图文”。 <a class=\"new-window\" href=\"http://kdt.im/YMm0uLOmo\" target=\"_blank\">查看详情<\/a><\/div><ul class=\"clearfix\"><li class=\"single-image-text\"><a href=\"//koudaitong.com/v2/weixin/imagetext#create/0\"><p>单条图文<\/p><div class=\"image-text-color-block\"><\/div><\/a><\/li><li class=\"multi-image-text\"><a href=\"//koudaitong.com/v2/weixin/imagetext#create/1\"><p>多条图文<\/p><div class=\"image-text-color-block\"><\/div><div class=\"image-text-color-block\"><\/div><\/a><\/li><\/ul><\/div><\/div>";
+			//$('.js-create-template').jBox('Tooltip1', {
+			//	attach: $(this),
+			//  
+			//	target: $('.js-create-template'),
+			//  position: {
+			//      x: 'left',
+			//      y: 'bottom'
+			//  },     
+			//  outside: 'y',
+			//  content: menubox
+			//});	
+			$(document).on("click", ".js-create-template", function() {
+				$(this).popModal({
+					html: menubox,
+					placement: 'bottomLeft',
+					showCloseBut: true
+				});
+			})
+		</script>
+
+
+	</body>
+
+</html>

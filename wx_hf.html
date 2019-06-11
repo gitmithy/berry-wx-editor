@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html class="">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="renderer" content="webkit">
+		<meta name="referrer" content="always">
+
+		<title id="js-meta-title">
+			自动回复设置 - 飞煌微信分销</title>
+
+		<link rel="icon" href="https://b.yzcdn.cn/v2/image/yz_fc.ico">
+
+		<meta name="keywords" content="有赞,微信商城,粉丝营销,微信商城运营">
+		<meta name="description" content="有赞是帮助商家在微信上搭建微信商城的平台，提供店铺、商品、订单、物流、消息和客户的管理模块，同时还提供丰富的营销应用和活动插件。">
+		<link rel="stylesheet" href="css/lib/chosen.jquery.20150826.min.css" />
+		<link rel="stylesheet" href="css/lib/jquery.ui.20151022.min.css" />
+		<link rel="stylesheet" href="css/lib/bootstrap_140705.min.css" />
+
+		<link rel="stylesheet" href="css/lib/pc_62aa96d559.css" />
+		<link rel="stylesheet" href="css/lib/app_weixin_b75f69383f.css" />
+		<link rel="stylesheet" href="css/lib/global_fad565fc04.css" />
+		<link rel="stylesheet" href="css/normal_0e40fc5b14.css" />
+		<link rel="stylesheet" href="popmodal/popModal.css" />
+		<style>
+			.popover.bottom {
+				margin-top: 0px !important;
+				margin-bottom: 0px !important;
+			}
+			
+			.popModal .close {
+				display: none !important;
+			}
+			
+			#mcover {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(255, 255, 255, 0.8);
+				display: none;
+				z-index: 20000;
+			}
+		</style>
+	</head>
+
+	<body class="theme theme--blue">
+
+		<!-- ▼ Main header -->
+		<header class="ui-header">
+			<div class="ui-header-inner clearfix">
+				<h1 class="ui-header-logo">
+					<a href="//koudaitong.com/v2/dashboard/index" title="有赞">
+						<span class="version"><i>3.0</i></span>
+					</a>
+				</h1>
+				<nav class="ui-header-nav">
+					<ul class="clearfix">
+						<li class="divide">|</li>
+						<li>
+							<a href="//koudaitong.com/v2/showcase/dashboard">店铺</a>
+						</li>
+						<li>
+							<a href="//koudaitong.com/v2/showcase/goods">商品</a>
+						</li>
+						<li>
+							<a href="//koudaitong.com/v2/trade/dashboard">订单</a>
+						</li>
+						<li class="divide">|</li>
+
+						<li class="js-weixin-notify active">
+							<a href="//koudaitong.com/v2/weixin/autoreply/normal">微信<sup class="notify-counter" style="visibility: hidden;"></sup></a>
+						</li>
+
+						<li class="js-weibo-notify">
+							<a href="//koudaitong.com/v2/sinaweibo/timeline/index">微博<sup class="notify-counter" style="visibility: hidden;"></sup></a>
+						</li>
+
+						<li class="divide">|</li>
+						<li>
+							<a href="//koudaitong.com/v2/ump/dashboard">应用和营销</a>
+						</li>
+						<li class="divide">|</li>
+
+						<li>
+							<a href="//koudaitong.com/v2/statcenter/dashboard">数据中心</a>
+						</li>
+						<li class="divide">|</li>
+
+						<li><a href="http://bbs.youzan.com/forum.php" target="_blank">商家社区</a></li>
+					</ul>
+				</nav>
+				<div class="ui-header-user ">
+					<div class="customer-wrap">
+					</div>
+					<div class="dropdown hover dropdown-right">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<span class="txt">
+								<span class="ellipsis team_name">飞煌微信分销</span><span class="dash"> - </span>设置
+							</span>
+							<i class="caret"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="//koudaitong.com/v2/account/team#select">切换店铺</a></li>
+							<li class="divide"></li>
+
+							<li><a href="//koudaitong.com/v2/setting/store">店铺设置</a></li>
+							<li><a href="//koudaitong.com/v2/account/personal">账号设置</a></li>
+							<li class="divide"></li>
+
+							<li><span>15007102058</span></li>
+							<li><a href="//koudaitong.com/v2/account/user/logout">退出</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- ▲ Main header -->
+
+		<!-- ▼ Main container -->
+		<div class="container">
+			<div class="app">
+				<div class="app-inner clearfix">
+					<div class="app-init-container">
+						<nav class="ui-nav clearfix">
+							<ul class="pull-left">
+								<li class="active">
+									<a href="//koudaitong.com/v2/weixin/autoreply/normal">关键词自动回复</a>
+								</li>
+								<li>
+									<a href="//koudaitong.com/v2/weixin/autoreply/default">关注后自动回复</a>
+								</li>
+								<li>
+									<a href="//koudaitong.com/v2/weixin/autoreply/hosting">消息托管</a>
+								</li>
+								<li>
+									<a href="//koudaitong.com/v2/weixin/autoreply/tail">小尾巴</a>
+								</li>
+								<li>
+									<a href="//koudaitong.com/v2/weixin/autoreply/weekly">每周回复</a>
+								</li>
+							</ul>
+							<div class="common-helps-entry pull-right">
+								<a href="http://kdt.im/YM9OSk000" target="_blank" style="color:#07d;">
+									<span class="help-icon"></span> 自动回复使用教程
+								</a>
+							</div>
+						</nav>
+
+						<div class="ui-box" style="position: relative;">
+							<a href="javascript:;" class="js-nav-add-rule btn btn-success">新建自动回复</a>
+							<div class="js-list-search form--search">
+								<input class="txt" type="text" placeholder="搜索">
+							</div>
+						</div>
+						<div class="app-init">
+							<div class="app__content">
+								<div class="weixin-normal page-weixin-autoreply-normal">
+									<div id="js-rule-container" class="rule-group-container">
+										<div class="rule-group">
+											<div class="rule-meta">
+												<h3>
+													<em class="rule-id">1</em>
+													<span class="rule-name">kkkl未命名规则</span>
+													<div class="rule-opts">
+														<a href="javascript:;" class="js-edit-rule">编辑</a>
+														<span>-</span>
+														<a href="javascript:;" class="js-delete-rule">删除</a>
+													</div>
+												</h3>
+											</div>
+											<div class="rule-body">
+												<div class="long-dashed"></div>
+												<div class="rule-keywords">
+													<div class="rule-inner">
+														<h4>关键词：</h4>
+														<div class="keyword-container">
+															<div class="info"></div>
+															<div class="keyword-list">
+																<div class="keyword input-append">
+																	<!-- <div class="keyword input-append"> -->
+																	<a href="javascript:;" class="close--circle">×</a>
+																	<span class="value">kkkl未命名规则</span>
+																	<span class="add-on">
+
+																		全匹配
+
+																	</span>
+																	<!-- </div> -->
+																</div>
+															</div>
+														</div>
+														<hr class="dashed">
+														<div class="opt">
+															<a href="javascript:;" class="js-add-keyword">+ 添加关键词</a>
+														</div>
+													</div>
+												</div>
+												<div class="rule-replies">
+													<div class="rule-inner">
+														<h4>自动回复：
+															<span class="send-method">
+
+																随机发送
+
+															</span>
+
+														</h4>
+														<div class="reply-container">
+															<div class="info"></div>
+															<ol class="reply-list">
+																<li>
+
+																	<div class="reply-cont">
+																		<div class="reply-summary">
+																			<span class="label label-success">图文</span>
+																			<span><a href="https://wap.koudaitong.com/v2/showcase/mpnews?alias=15ev9fdcr" target="_blank" class="new-window">saasdas</a></span>
+																		</div>
+																	</div>
+
+																	<div class="reply-opts"><a class="js-edit-it" href="javascript:;">编辑</a> - <a class="js-delete-it"
+																		 href="javascript:;">删除</a></div>
+																</li>
+																<li>
+
+																	<div class="reply-cont">
+																		<div class="reply-summary">
+																			<span class="label label-success">图文</span>
+																			<span><a href="https://wap.koudaitong.com/v2/showcase/mpnews?alias=15ev9fdcr" target="_blank" class="new-window">saasdas</a></span>
+																		</div>
+																	</div>
+
+																	<div class="reply-opts"><a class="js-edit-it" href="javascript:;">编辑</a> - <a class="js-delete-it"
+																		 href="javascript:;">删除</a></div>
+																</li>
+																<li>
+
+																	<div class="reply-cont">
+																		<div class="reply-summary">
+																			<span class="label label-success">图文</span>
+																			<span> <a href="https://wap.koudaitong.com/v2/showcase/mpnews?alias=3zwr5i0s" target="_blank" class="new-window">demo</a></span>
+																		</div>
+																	</div>
+
+																	<div class="reply-opts"><a class="js-edit-it" href="javascript:;">编辑</a> - <a class="js-delete-it"
+																		 href="javascript:;">删除</a></div>
+																</li>
+																<li>
+
+																	<div class="reply-cont">
+																		<div class="reply-summary">
+																			<span class="label label-success">图文</span>
+																			<span> <a href="https://wap.koudaitong.com/v2/showcase/mpnews?alias=15ev9fdcr" target="_blank" class="new-window">saasdas</a></span>
+																		</div>
+																	</div>
+
+																	<div class="reply-opts"><a class="js-edit-it" href="javascript:;">编辑</a> - <a class="js-delete-it"
+																		 href="javascript:;">删除</a></div>
+																</li>
+																<li>
+
+																	<div class="reply-cont">
+																		<div class="reply-summary">
+																			<span class="label label-success">图文</span>
+																			<span> <a href="https://wap.koudaitong.com/v2/showcase/mpnews?alias=3zwr5i0s" target="_blank" class="new-window">demo</a></span>
+																		</div>
+																	</div>
+
+																	<div class="reply-opts"><a class="js-edit-it" href="javascript:;">编辑</a> - <a class="js-delete-it"
+																		 href="javascript:;">删除</a></div>
+																</li>
+															</ol>
+														</div>
+														<hr class="dashed">
+														<div class="opt">
+															<a class="js-add-reply add-reply-menu" href="javascript:;">+ 添加一条回复</a>
+															<span class="disable-opt hide">最多十条回复</span>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="rule-group">
+											<div class="rule-meta">
+												<h3>
+													<em class="rule-id">2</em>
+													<span class="rule-name">售后规则</span>
+													<div class="rule-opts">
+														<a href="javascript:;" class="js-edit-rule">编辑</a>
+														<span>-</span>
+														<a href="javascript:;" class="js-delete-rule">删除</a>
+													</div>
+												</h3>
+											</div>
+											<div class="rule-body">
+												<div class="long-dashed"></div>
+												<div class="rule-keywords">
+													<div class="rule-inner">
+														<h4>关键词：</h4>
+														<div class="keyword-container">
+															<div class="info"></div>
+															<div class="keyword-list">
+																<div class="keyword input-append">
+																	<!-- <div class="keyword input-append"> -->
+																	<a href="javascript:;" class="close--circle">×</a>
+																	<span class="value">购物</span>
+																	<span class="add-on">
+
+																		全匹配
+
+																	</span>
+																	<!-- </div> -->
+																</div>
+															</div>
+														</div>
+														<hr class="dashed">
+														<div class="opt">
+															<a href="javascript:;" class="js-add-keyword">+ 添加关键词</a>
+														</div>
+													</div>
+												</div>
+												<div class="rule-replies">
+													<div class="rule-inner">
+														<h4>自动回复：
+															<span class="send-method">
+
+																随机发送
+
+															</span>
+
+														</h4>
+														<div class="reply-container">
+															<div class="info"></div>
+															<ol class="reply-list">
+																<li>
+																	<div class="reply-cont">
+																		<div class="reply-summary">
+																			<span class="label label-success">商品</span>
+																			<span> <a href="https://wap.koudaitong.com/v2/showcase/goods?alias=si7rix1j" target="_blank" class="new-window">粉刺针/挑痘痘
+																					颜色随机发 - 测试商品，不发货，不退款</a></span>
+																		</div>
+																	</div>
+
+																	<div class="reply-opts"><a class="js-edit-it" href="javascript:;">编辑</a> - <a class="js-delete-it"
+																		 href="javascript:;">删除</a></div>
+																</li>
+															</ol>
+														</div>
+														<hr class="dashed">
+														<div class="opt">
+															<a class="js-add-reply add-reply-menu" href="javascript:;">+ 添加一条回复</a>
+															<span class="disable-opt hide">最多十条回复</span>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="rule-group">
+											<div class="rule-meta">
+												<h3>
+													<em class="rule-id">3</em>
+													<span class="rule-name">订单未命名规则</span>
+													<div class="rule-opts">
+														<a href="javascript:;" class="js-edit-rule">编辑</a>
+														<span>-</span>
+														<a href="javascript:;" class="js-delete-rule">删除</a>
+													</div>
+												</h3>
+											</div>
+											<div class="rule-body">
+												<div class="long-dashed"></div>
+												<div class="rule-keywords">
+													<div class="rule-inner">
+														<h4>关键词：</h4>
+														<div class="keyword-container">
+															<div class="info"></div>
+															<div class="keyword-list">
+																<div class="keyword input-append">
+																	<!-- <div class="keyword input-append"> -->
+																	<a href="javascript:;" class="close--circle">×</a>
+																	<span class="value">jllj<img src="//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/80.png"
+																		 unselectable="on"></span>
+																	<span class="add-on">
+
+																		模糊
+
+																	</span>
+																	<!-- </div> -->
+																</div>
+																<div class="keyword input-append">
+																	<!-- <div class="keyword input-append"> -->
+																	<a href="javascript:;" class="close--circle">×</a>
+																	<span class="value">gfhgh</span>
+																	<span class="add-on">
+
+																		全匹配
+
+																	</span>
+																	<!-- </div> -->
+																</div>
+																<div class="keyword input-append">
+																	<!-- <div class="keyword input-append"> -->
+																	<a href="javascript:;" class="close--circle">×</a>
+																	<span class="value">dfgdf</span>
+																	<span class="add-on">
+
+																		全匹配
+
+																	</span>
+																	<!-- </div> -->
+																</div>
+																<div class="keyword input-append">
+																	<!-- <div class="keyword input-append"> -->
+																	<a href="javascript:;" class="close--circle">×</a>
+																	<span class="value">fghfgh</span>
+																	<span class="add-on">
+
+																		全匹配
+
+																	</span>
+																	<!-- </div> -->
+																</div>
+																<div class="keyword input-append">
+																	<!-- <div class="keyword input-append"> -->
+																	<a href="javascript:;" class="close--circle">×</a>
+																	<span class="value">jkjk</span>
+																	<span class="add-on">
+
+																		全匹配
+
+																	</span>
+																	<!-- </div> -->
+																</div>
+															</div>
+														</div>
+														<hr class="dashed">
+														<div class="opt">
+															<a href="javascript:;" class="js-add-keyword">+ 添加关键词</a>
+														</div>
+													</div>
+												</div>
+												<div class="rule-replies">
+													<div class="rule-inner">
+														<h4>自动回复：
+															<span class="send-method">
+
+																随机发送
+
+															</span>
+
+														</h4>
+														<div class="reply-container">
+															<div class="info"></div>
+															<ol class="reply-list">
+																<li>
+																	<!-- 文本 -->
+																	<div class="reply-cont">
+																		<div class="reply-summary">
+																			<span class="label label-success">文本</span>
+																			<span>电风扇斯蒂芬森</span>
+																		</div>
+																	</div>
+
+																	<div class="reply-opts"><a class="js-edit-it" href="javascript:;">编辑</a> - <a class="js-delete-it"
+																		 href="javascript:;">删除</a></div>
+																</li>
+																<li>
+																	<!-- 文本 -->
+																	<div class="reply-cont">
+																		<div class="reply-summary">
+																			<span class="label label-success">文本</span>
+																			<span>斯蒂芬森的斯蒂芬森的</span>
+																		</div>
+																	</div>
+
+																	<div class="reply-opts"><a class="js-edit-it" href="javascript:;">编辑</a> - <a class="js-delete-it"
+																		 href="javascript:;">删除</a></div>
+																</li>
+																<li>
+																	<div class="reply-cont">
+																		<div class="reply-summary">
+																			<span class="label label-success">商品</span>
+																			<span> <a href="https://wap.koudaitong.com/v2/showcase/goods?alias=a12iounn" target="_blank" class="new-window">香奈儿机会(邂逅)女士香水
+																					- 测试商品，不发货，不退款</a></span>
+																		</div>
+																	</div>
+
+																	<div class="reply-opts"><a class="js-edit-it" href="javascript:;">编辑</a> - <a class="js-delete-it"
+																		 href="javascript:;">删除</a></div>
+																</li>
+															</ol>
+														</div>
+														<hr class="dashed">
+														<div class="opt">
+															<a class="js-add-reply add-reply-menu" href="javascript:;">+ 添加一条回复</a>
+															<span class="disable-opt hide">最多十条回复</span>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<div class="rule-group-opts">
+										<div class="pagenavi"><span class="total">共 3 条，每页 10 条</span>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="notify-bar js-notify animated hinge hide">
+					</div>
+				</div>
+			</div>
+			<aside class="ui-sidebar sidebar" style="min-height: 625px;">
+				<nav>
+
+					<h4>消息推送</h4>
+					<ul>
+						<li>
+							<a href="//koudaitong.com/v2/weixin/imagetext">图文素材</a>
+						</li>
+
+						<li class="active">
+							<a href="//koudaitong.com/v2/weixin/autoreply/normal">自动回复</a>
+						</li>
+
+						<li>
+							<a href="//koudaitong.com/v2/message/quickreply">快捷短语</a>
+						</li>
+
+					</ul>
+
+					<h4>高级</h4>
+					<ul>
+						<li>
+							<a href="//koudaitong.com/v2/weixin/shopmenu">自定义菜单</a>
+						</li>
+					</ul>
+
+				</nav>
+
+			</aside>
+		</div>
+		<!-- ▲ Main container -->
+		<div id="mcover" style="display: none;">
+			<!--<img src="img/guide.png">-->
+			<div style="border: 1px solid rgba(0,0,0,.3);box-shadow: 0 3px 7px rgba(0,0,0,.3); width: 45%; color: #000; margin: 0 auto; margin-top: 10%; background-color:#fff ; border-radius: 5px 5px 5px 5px; padding: 10px 15px;">
+				<div class="modalcon"></div>
+
+			</div>
+		</div>
+		<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+		<script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+		<!--<script type="text/javascript" src="js/jBox.min.js" ></script>-->
+		<script type="text/javascript" src="popmodal/popModal.js"></script>
+
+		<script language="JavaScript">
+			//			表情
+			var emtionbox =
+				"<div class=\"emotion-wrapper\" style=\"display:none;top:16px;left:-185px\"><ul class=\"emotion-container clearfix\"><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/01.gif\" alt=\"[微笑]\" title=\"[微笑]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/02.gif\" alt=\"[撇嘴]\" title=\"[撇嘴]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/03.gif\" alt=\"[色]\" title=\"[色]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/04.gif\" alt=\"[发呆]\" title=\"[发呆]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/05.gif\" alt=\"[得意]\" title=\"[得意]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/06.gif\" alt=\"[流泪]\" title=\"[流泪]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/07.gif\" alt=\"[害羞]\" title=\"[害羞]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/08.gif\" alt=\"[闭嘴]\" title=\"[闭嘴]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/09.gif\" alt=\"[睡]\" title=\"[睡]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/10.gif\" alt=\"[大哭]\" title=\"[大哭]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/11.gif\" alt=\"[尴尬]\" title=\"[尴尬]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/12.gif\" alt=\"[发怒]\" title=\"[发怒]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/13.gif\" alt=\"[调皮]\" title=\"[调皮]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/14.gif\" alt=\"[呲牙]\" title=\"[呲牙]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/15.gif\" alt=\"[惊讶]\" title=\"[惊讶]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/16.gif\" alt=\"[难过]\" title=\"[难过]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/17.gif\" alt=\"[酷]\" title=\"[酷]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/18.gif\" alt=\"[冷汗]\" title=\"[冷汗]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/19.gif\" alt=\"[抓狂]\" title=\"[抓狂]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/20.gif\" alt=\"[吐]\" title=\"[吐]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/21.gif\" alt=\"[偷笑]\" title=\"[偷笑]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/22.gif\" alt=\"[愉快]\" title=\"[愉快]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/23.gif\" alt=\"[白眼]\" title=\"[白眼]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/24.gif\" alt=\"[傲慢]\" title=\"[傲慢]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/25.gif\" alt=\"[饥饿]\" title=\"[饥饿]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/26.gif\" alt=\"[困]\" title=\"[困]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/27.gif\" alt=\"[惊恐]\" title=\"[惊恐]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/28.gif\" alt=\"[流汗]\" title=\"[流汗]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/29.gif\" alt=\"[憨笑]\" title=\"[憨笑]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/30.gif\" alt=\"[悠闲]\" title=\"[悠闲]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/31.gif\" alt=\"[奋斗]\" title=\"[奋斗]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/32.gif\" alt=\"[咒骂]\" title=\"[咒骂]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/33.gif\" alt=\"[疑问]\" title=\"[疑问]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/34.gif\" alt=\"[嘘]\" title=\"[嘘]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/35.gif\" alt=\"[晕]\" title=\"[晕]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/36.gif\" alt=\"[疯了]\" title=\"[疯了]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/37.gif\" alt=\"[衰]\" title=\"[衰]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/38.gif\" alt=\"[骷髅]\" title=\"[骷髅]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/39.gif\" alt=\"[敲打]\" title=\"[敲打]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/40.gif\" alt=\"[再见]\" title=\"[再见]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/41.gif\" alt=\"[擦汗]\" title=\"[擦汗]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/42.gif\" alt=\"[抠鼻]\" title=\"[抠鼻]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/43.gif\" alt=\"[鼓掌]\" title=\"[鼓掌]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/44.gif\" alt=\"[糗大了]\" title=\"[糗大了]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/45.gif\" alt=\"[坏笑]\" title=\"[坏笑]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/46.gif\" alt=\"[左哼哼]\" title=\"[左哼哼]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/47.gif\" alt=\"[右哼哼]\" title=\"[右哼哼]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/48.gif\" alt=\"[哈欠]\" title=\"[哈欠]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/49.gif\" alt=\"[鄙视]\" title=\"[鄙视]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/50.gif\" alt=\"[委屈]\" title=\"[委屈]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/51.gif\" alt=\"[快哭了]\" title=\"[快哭了]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/52.gif\" alt=\"[阴险]\" title=\"[阴险]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/53.gif\" alt=\"[亲亲]\" title=\"[亲亲]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/54.gif\" alt=\"[吓]\" title=\"[吓]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/55.gif\" alt=\"[可怜]\" title=\"[可怜]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/56.gif\" alt=\"[菜刀]\" title=\"[菜刀]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/57.gif\" alt=\"[西瓜]\" title=\"[西瓜]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/58.gif\" alt=\"[啤酒]\" title=\"[啤酒]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/59.gif\" alt=\"[篮球]\" title=\"[篮球]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/60.gif\" alt=\"[乒乓]\" title=\"[乒乓]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/61.gif\" alt=\"[咖啡]\" title=\"[咖啡]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/62.gif\" alt=\"[饭]\" title=\"[饭]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/63.gif\" alt=\"[猪头]\" title=\"[猪头]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/64.gif\" alt=\"[玫瑰]\" title=\"[玫瑰]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/65.gif\" alt=\"[凋谢]\" title=\"[凋谢]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/66.gif\" alt=\"[嘴唇]\" title=\"[嘴唇]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/67.gif\" alt=\"[爱心]\" title=\"[爱心]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/68.gif\" alt=\"[心碎]\" title=\"[心碎]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/69.gif\" alt=\"[蛋糕]\" title=\"[蛋糕]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/70.gif\" alt=\"[闪电]\" title=\"[闪电]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/71.gif\" alt=\"[炸弹]\" title=\"[炸弹]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/72.gif\" alt=\"[刀]\" title=\"[刀]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/73.gif\" alt=\"[足球]\" title=\"[足球]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/74.gif\" alt=\"[瓢虫]\" title=\"[瓢虫]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/75.gif\" alt=\"[便便]\" title=\"[便便]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/76.gif\" alt=\"[月亮]\" title=\"[月亮]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/77.gif\" alt=\"[太阳]\" title=\"[太阳]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/78.gif\" alt=\"[礼物]\" title=\"[礼物]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/79.gif\" alt=\"[拥抱]\" title=\"[拥抱]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/80.gif\" alt=\"[强]\" title=\"[强]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/81.gif\" alt=\"[弱]\" title=\"[弱]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/82.gif\" alt=\"[握手]\" title=\"[握手]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/83.gif\" alt=\"[胜利]\" title=\"[胜利]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/84.gif\" alt=\"[抱拳]\" title=\"[抱拳]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/85.gif\" alt=\"[勾引]\" title=\"[勾引]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/86.gif\" alt=\"[拳头]\" title=\"[拳头]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/87.gif\" alt=\"[差劲]\" title=\"[差劲]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/88.gif\" alt=\"[爱你]\" title=\"[爱你]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/89.gif\" alt=\"[NO]\" title=\"[NO]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/90.gif\" alt=\"[OK]\" title=\"[OK]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/91.gif\" alt=\"[爱情]\" title=\"[爱情]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/92.gif\" alt=\"[飞吻]\" title=\"[飞吻]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/93.gif\" alt=\"[跳跳]\" title=\"[跳跳]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/94.gif\" alt=\"[发抖]\" title=\"[发抖]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/95.gif\" alt=\"[怄火]\" title=\"[怄火]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/96.gif\" alt=\"[转圈]\" title=\"[转圈]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/97.gif\" alt=\"[磕头]\" title=\"[磕头]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/98.gif\" alt=\"[回头]\" title=\"[回头]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/99.gif\" alt=\"[跳绳]\" title=\"[跳绳]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/100.gif\" alt=\"[投降]\" title=\"[投降]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/101.gif\" alt=\"[激动]\" title=\"[激动]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/102.gif\" alt=\"[乱舞]\" title=\"[乱舞]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/103.gif\" alt=\"[献吻]\" title=\"[献吻]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/104.gif\" alt=\"[左太极]\" title=\"[左太极]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/105.gif\" alt=\"[右太极]\" title=\"[右太极]\"><\/li><\/ul><\/div>";
+			//规则模板
+			var hfbox =
+				"<div class=\"popover bottom\" style=\"display:block;\"><div class=\"popover-inner popover-thin\"><div class=\"popover-content\"><div class=\"addrule controls\"><input class=\"js-txt\" type=\"text\" maxlength=\"15\" placeholder=\"二维码名称\" value=\"未命名规则\"><\/div><button class=\"js-btn-confirm btn btn-primary hfconfirm\">确定<\/button> <button class=\"js-btn-cancel btn\">取消<\/button><\/div><\/div><\/div>";
+			//规则编辑模板
+			var hfeditbox =
+				"<div class=\"popover bottom\" style=\"display:block;\"><div class=\"popover-inner popover-thin\"><div class=\"popover-content\"><div class=\"addrule controls\"><input class=\"hfedit-txt\" type=\"text\" maxlength=\"15\" placeholder=\"二维码名称\" value=\"未命名规则\"><\/div><button class=\"js-btn-confirm btn btn-primary hfeditconfirm\">确定<\/button> <button class=\"js-btn-cancel btn\">取消<\/button><\/div><\/div><\/div>";
+			//关键词模板
+			var keybox =
+				"<div class=\"popover bottom\" style=\"display:block;\"><div class=\"popover-inner popover-keyword\"><div class=\"popover-content\"><div class=\"form-horizontal\"><div class=\"control-group\"><label class=\"control-label\"><em class=\"required\">*<\/em>关键词：<\/label><div class=\"controls\"><input placeholder=\"关键词最多支持15个字\" class=\"key-txt\" type=\"text\" maxlength=\"15\" value=\"\"> <span class=\"help-block err-message\" style=\"font-size:12px;color:red\"><\/span> <span class=\"js-emotion input-emotion-btn\"><\/span><div class=\"emotion-wrapper\"><ul class=\"emotion-container clearfix\"><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/01.gif\" alt=\"/::)\" title=\"/::)\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/02.gif\" alt=\"/::~\" title=\"/::~\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/03.gif\" alt=\"/::B\" title=\"/::B\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/04.gif\" alt=\"/::|\" title=\"/::|\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/05.gif\" alt=\"/:8-)\" title=\"/:8-)\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/06.gif\" alt=\"/::<\" title=\"/::<\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/07.gif\" alt=\"/::$\" title=\"/::$\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/08.gif\" alt=\"/::X\" title=\"/::X\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/09.gif\" alt=\"/::Z\" title=\"/::Z\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/10.gif\" alt=\"/::'(\" title=\"/::'(\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/11.gif\" alt=\"/::-|\" title=\"/::-|\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/12.gif\" alt=\"/::@\" title=\"/::@\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/13.gif\" alt=\"/::P\" title=\"/::P\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/14.gif\" alt=\"/::D\" title=\"/::D\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/15.gif\" alt=\"/::O\" title=\"/::O\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/16.gif\" alt=\"/::(\" title=\"/::(\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/17.gif\" alt=\"/::+\" title=\"/::+\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/18.gif\" alt=\"/:--b\" title=\"/:--b\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/19.gif\" alt=\"/::Q\" title=\"/::Q\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/20.gif\" alt=\"/::T\" title=\"/::T\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/21.gif\" alt=\"/:,@P\" title=\"/:,@P\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/22.gif\" alt=\"/:,@-D\" title=\"/:,@-D\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/23.gif\" alt=\"/::d\" title=\"/::d\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/24.gif\" alt=\"/:,@o\" title=\"/:,@o\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/25.gif\" alt=\"/::g\" title=\"/::g\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/26.gif\" alt=\"/:|-)\" title=\"/:|-)\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/27.gif\" alt=\"/::!\" title=\"/::!\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/28.gif\" alt=\"/::L\" title=\"/::L\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/29.gif\" alt=\"/::>\" title=\"/::>\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/30.gif\" alt=\"/::,@\" title=\"/::,@\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/31.gif\" alt=\"/:,@f\" title=\"/:,@f\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/32.gif\" alt=\"/::-S\" title=\"/::-S\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/33.gif\" alt=\"/:?\" title=\"/:?\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/34.gif\" alt=\"/:,@x\" title=\"/:,@x\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/35.gif\" alt=\"/:,@@\" title=\"/:,@@\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/36.gif\" alt=\"/::8\" title=\"/::8\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/37.gif\" alt=\"/:,@!\" title=\"/:,@!\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/38.gif\" alt=\"/:!!!\" title=\"/:!!!\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/39.gif\" alt=\"/:xx\" title=\"/:xx\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/40.gif\" alt=\"/:bye\" title=\"/:bye\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/41.gif\" alt=\"/:wipe\" title=\"/:wipe\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/42.gif\" alt=\"/:dig\" title=\"/:dig\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/43.gif\" alt=\"/:handclap\" title=\"/:handclap\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/44.gif\" alt=\"/:&amp;-(\" title=\"/:&amp;-(\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/45.gif\" alt=\"/:B-)\" title=\"/:B-)\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/46.gif\" alt=\"/:<@\" title=\"/:<@\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/47.gif\" alt=\"/:@>\" title=\"/:@>\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/48.gif\" alt=\"/::-O\" title=\"/::-O\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/49.gif\" alt=\"/:>-|\" title=\"/:>-|\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/50.gif\" alt=\"/:P-(\" title=\"/:P-(\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/51.gif\" alt=\"/::'|\" title=\"/::'|\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/52.gif\" alt=\"/:X-)\" title=\"/:X-)\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/53.gif\" alt=\"/::*\" title=\"/::*\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/54.gif\" alt=\"/:@x\" title=\"/:@x\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/55.gif\" alt=\"/:8*\" title=\"/:8*\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/56.gif\" alt=\"/:pd\" title=\"/:pd\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/57.gif\" alt=\"/:<W>\" title=\"/:<W>\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/58.gif\" alt=\"/:beer\" title=\"/:beer\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/59.gif\" alt=\"/:basketb\" title=\"/:basketb\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/60.gif\" alt=\"/:oo\" title=\"/:oo\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/61.gif\" alt=\"/:coffee\" title=\"/:coffee\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/62.gif\" alt=\"/:eat\" title=\"/:eat\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/63.gif\" alt=\"/:pig\" title=\"/:pig\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/64.gif\" alt=\"/:rose\" title=\"/:rose\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/65.gif\" alt=\"/:fade\" title=\"/:fade\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/66.gif\" alt=\"/:showlove\" title=\"/:showlove\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/67.gif\" alt=\"/:heart\" title=\"/:heart\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/68.gif\" alt=\"/:break\" title=\"/:break\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/69.gif\" alt=\"/:cake\" title=\"/:cake\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/70.gif\" alt=\"/:li\" title=\"/:li\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/71.gif\" alt=\"/:bome\" title=\"/:bome\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/72.gif\" alt=\"/:kn\" title=\"/:kn\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/73.gif\" alt=\"/:footb\" title=\"/:footb\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/74.gif\" alt=\"/:ladybug\" title=\"/:ladybug\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/75.gif\" alt=\"/:shit\" title=\"/:shit\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/76.gif\" alt=\"/:moon\" title=\"/:moon\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/77.gif\" alt=\"/:sun\" title=\"/:sun\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/78.gif\" alt=\"/:gift\" title=\"/:gift\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/79.gif\" alt=\"/:hug\" title=\"/:hug\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/80.gif\" alt=\"/:strong\" title=\"/:strong\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/81.gif\" alt=\"/:weak\" title=\"/:weak\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/82.gif\" alt=\"/:share\" title=\"/:share\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/83.gif\" alt=\"/:v\" title=\"/:v\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/84.gif\" alt=\"/:@)\" title=\"/:@)\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/85.gif\" alt=\"/:jj\" title=\"/:jj\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/86.gif\" alt=\"/:@@\" title=\"/:@@\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/87.gif\" alt=\"/:bad\" title=\"/:bad\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/88.gif\" alt=\"/:lvu\" title=\"/:lvu\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/89.gif\" alt=\"/:no\" title=\"/:no\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/90.gif\" alt=\"/:ok\" title=\"/:ok\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/91.gif\" alt=\"/:love\" title=\"/:love\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/92.gif\" alt=\"/:<L>\" title=\"/:<L>\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/93.gif\" alt=\"/:jump\" title=\"/:jump\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/94.gif\" alt=\"/:shake\" title=\"/:shake\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/95.gif\" alt=\"/:<O>\" title=\"/:<O>\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/96.gif\" alt=\"/:circle\" title=\"/:circle\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/97.gif\" alt=\"/:kotow\" title=\"/:kotow\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/98.gif\" alt=\"/:turn\" title=\"/:turn\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/99.gif\" alt=\"/:skip\" title=\"/:skip\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/100.gif\" alt=\"/:oY\" title=\"/:oY\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/101.gif\" alt=\"/:#-0\" title=\"/:#-0\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/102.gif\" alt=\"/:hiphot\" title=\"/:hiphot\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/103.gif\" alt=\"/:kiss\" title=\"/:kiss\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/104.gif\" alt=\"/:<&amp;\" title=\"/:<&amp;\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/105.gif\" alt=\"/:&amp;>\" title=\"/:&amp;>\"><\/li><\/ul><\/div><\/div><\/div><div class=\"control-group\"><label class=\"control-label\"><em class=\"required\">*<\/em>规则：<\/label><div class=\"controls\"><div class=\"keyword-type-group\"><label class=\"radio inline\"><input name=\"keyword_type\" type=\"radio\"  value=\"1\"> 全匹配<\/label><label class=\"radio inline\"><input name=\"keyword_type\" type=\"radio\" value=\"2\"> 模糊<\/label><\/div><\/div><\/div><div class=\"form-actions\"><button class=\"js-btn-confirm btn btn-primary keyconfirm\">确定<\/button> <button class=\"js-btn-cancel btn\">取消<\/button><\/div><\/div><\/div><\/div><\/div>";
+			//			回复模板
+			var titlebox =
+				"<div class=\"popover-inner popover-reply\"><div class=\"popover-content\"><div class=\"form-horizontal\"><div class=\"wb-sender\"><div class=\"wb-sender__inner\"><div class=\"wb-sender__input\"><div class=\"misc top clearfix\"><div class=\"content-actions clearfix\"><div class=\"editor-module insert-emotion\"><a class=\"js-open-wx_emotion\" data-action-type=\"emotion\" href=\"javascript:;\">表情<\/a><div class=\"emotion-wrapper\" style=\"display:none;top:16px;left:-185px\"><ul class=\"emotion-container clearfix\"><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/01.gif\" alt=\"[微笑]\" title=\"[微笑]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/02.gif\" alt=\"[撇嘴]\" title=\"[撇嘴]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/03.gif\" alt=\"[色]\" title=\"[色]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/04.gif\" alt=\"[发呆]\" title=\"[发呆]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/05.gif\" alt=\"[得意]\" title=\"[得意]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/06.gif\" alt=\"[流泪]\" title=\"[流泪]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/07.gif\" alt=\"[害羞]\" title=\"[害羞]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/08.gif\" alt=\"[闭嘴]\" title=\"[闭嘴]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/09.gif\" alt=\"[睡]\" title=\"[睡]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/10.gif\" alt=\"[大哭]\" title=\"[大哭]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/11.gif\" alt=\"[尴尬]\" title=\"[尴尬]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/12.gif\" alt=\"[发怒]\" title=\"[发怒]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/13.gif\" alt=\"[调皮]\" title=\"[调皮]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/14.gif\" alt=\"[呲牙]\" title=\"[呲牙]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/15.gif\" alt=\"[惊讶]\" title=\"[惊讶]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/16.gif\" alt=\"[难过]\" title=\"[难过]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/17.gif\" alt=\"[酷]\" title=\"[酷]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/18.gif\" alt=\"[冷汗]\" title=\"[冷汗]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/19.gif\" alt=\"[抓狂]\" title=\"[抓狂]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/20.gif\" alt=\"[吐]\" title=\"[吐]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/21.gif\" alt=\"[偷笑]\" title=\"[偷笑]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/22.gif\" alt=\"[愉快]\" title=\"[愉快]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/23.gif\" alt=\"[白眼]\" title=\"[白眼]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/24.gif\" alt=\"[傲慢]\" title=\"[傲慢]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/25.gif\" alt=\"[饥饿]\" title=\"[饥饿]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/26.gif\" alt=\"[困]\" title=\"[困]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/27.gif\" alt=\"[惊恐]\" title=\"[惊恐]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/28.gif\" alt=\"[流汗]\" title=\"[流汗]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/29.gif\" alt=\"[憨笑]\" title=\"[憨笑]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/30.gif\" alt=\"[悠闲]\" title=\"[悠闲]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/31.gif\" alt=\"[奋斗]\" title=\"[奋斗]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/32.gif\" alt=\"[咒骂]\" title=\"[咒骂]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/33.gif\" alt=\"[疑问]\" title=\"[疑问]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/34.gif\" alt=\"[嘘]\" title=\"[嘘]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/35.gif\" alt=\"[晕]\" title=\"[晕]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/36.gif\" alt=\"[疯了]\" title=\"[疯了]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/37.gif\" alt=\"[衰]\" title=\"[衰]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/38.gif\" alt=\"[骷髅]\" title=\"[骷髅]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/39.gif\" alt=\"[敲打]\" title=\"[敲打]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/40.gif\" alt=\"[再见]\" title=\"[再见]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/41.gif\" alt=\"[擦汗]\" title=\"[擦汗]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/42.gif\" alt=\"[抠鼻]\" title=\"[抠鼻]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/43.gif\" alt=\"[鼓掌]\" title=\"[鼓掌]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/44.gif\" alt=\"[糗大了]\" title=\"[糗大了]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/45.gif\" alt=\"[坏笑]\" title=\"[坏笑]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/46.gif\" alt=\"[左哼哼]\" title=\"[左哼哼]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/47.gif\" alt=\"[右哼哼]\" title=\"[右哼哼]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/48.gif\" alt=\"[哈欠]\" title=\"[哈欠]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/49.gif\" alt=\"[鄙视]\" title=\"[鄙视]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/50.gif\" alt=\"[委屈]\" title=\"[委屈]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/51.gif\" alt=\"[快哭了]\" title=\"[快哭了]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/52.gif\" alt=\"[阴险]\" title=\"[阴险]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/53.gif\" alt=\"[亲亲]\" title=\"[亲亲]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/54.gif\" alt=\"[吓]\" title=\"[吓]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/55.gif\" alt=\"[可怜]\" title=\"[可怜]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/56.gif\" alt=\"[菜刀]\" title=\"[菜刀]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/57.gif\" alt=\"[西瓜]\" title=\"[西瓜]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/58.gif\" alt=\"[啤酒]\" title=\"[啤酒]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/59.gif\" alt=\"[篮球]\" title=\"[篮球]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/60.gif\" alt=\"[乒乓]\" title=\"[乒乓]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/61.gif\" alt=\"[咖啡]\" title=\"[咖啡]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/62.gif\" alt=\"[饭]\" title=\"[饭]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/63.gif\" alt=\"[猪头]\" title=\"[猪头]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/64.gif\" alt=\"[玫瑰]\" title=\"[玫瑰]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/65.gif\" alt=\"[凋谢]\" title=\"[凋谢]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/66.gif\" alt=\"[嘴唇]\" title=\"[嘴唇]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/67.gif\" alt=\"[爱心]\" title=\"[爱心]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/68.gif\" alt=\"[心碎]\" title=\"[心碎]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/69.gif\" alt=\"[蛋糕]\" title=\"[蛋糕]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/70.gif\" alt=\"[闪电]\" title=\"[闪电]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/71.gif\" alt=\"[炸弹]\" title=\"[炸弹]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/72.gif\" alt=\"[刀]\" title=\"[刀]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/73.gif\" alt=\"[足球]\" title=\"[足球]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/74.gif\" alt=\"[瓢虫]\" title=\"[瓢虫]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/75.gif\" alt=\"[便便]\" title=\"[便便]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/76.gif\" alt=\"[月亮]\" title=\"[月亮]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/77.gif\" alt=\"[太阳]\" title=\"[太阳]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/78.gif\" alt=\"[礼物]\" title=\"[礼物]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/79.gif\" alt=\"[拥抱]\" title=\"[拥抱]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/80.gif\" alt=\"[强]\" title=\"[强]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/81.gif\" alt=\"[弱]\" title=\"[弱]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/82.gif\" alt=\"[握手]\" title=\"[握手]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/83.gif\" alt=\"[胜利]\" title=\"[胜利]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/84.gif\" alt=\"[抱拳]\" title=\"[抱拳]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/85.gif\" alt=\"[勾引]\" title=\"[勾引]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/86.gif\" alt=\"[拳头]\" title=\"[拳头]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/87.gif\" alt=\"[差劲]\" title=\"[差劲]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/88.gif\" alt=\"[爱你]\" title=\"[爱你]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/89.gif\" alt=\"[NO]\" title=\"[NO]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/90.gif\" alt=\"[OK]\" title=\"[OK]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/91.gif\" alt=\"[爱情]\" title=\"[爱情]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/92.gif\" alt=\"[飞吻]\" title=\"[飞吻]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/93.gif\" alt=\"[跳跳]\" title=\"[跳跳]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/94.gif\" alt=\"[发抖]\" title=\"[发抖]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/95.gif\" alt=\"[怄火]\" title=\"[怄火]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/96.gif\" alt=\"[转圈]\" title=\"[转圈]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/97.gif\" alt=\"[磕头]\" title=\"[磕头]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/98.gif\" alt=\"[回头]\" title=\"[回头]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/99.gif\" alt=\"[跳绳]\" title=\"[跳绳]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/100.gif\" alt=\"[投降]\" title=\"[投降]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/101.gif\" alt=\"[激动]\" title=\"[激动]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/102.gif\" alt=\"[乱舞]\" title=\"[乱舞]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/103.gif\" alt=\"[献吻]\" title=\"[献吻]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/104.gif\" alt=\"[左太极]\" title=\"[左太极]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/105.gif\" alt=\"[右太极]\" title=\"[右太极]\"><\/li><\/ul><\/div><\/div><div class=\"editor-module insert-hyperlink\"><a class=\"js-open-hyperlink\" data-action-type=\"hyperlink\" href=\"javascript:;\">插入链接<\/a><div class=\"hyperlink-wrapper\" style=\"display:none\"><input class=\"js-txt input-large txt\" type=\"text\" placeholder=\"http://\"> <button class=\"js-btn-hyperlink btn btn-primary\">确定<\/button><\/div><\/div><div class=\"editor-module insert-articles\"><a class=\"js-open-articles\" data-action-type=\"articles\" href=\"javascript:;\">选择图文<\/a><div class=\"articles-wrapper\"><\/div><\/div><\/div><\/div><div class=\"content-wrapper\"><textarea class=\"js-txta\" cols=\"50\" rows=\"4\"><\/textarea><div class=\"js-picture-container picture-container\"><\/div><div class=\"complex-backdrop\" style=\"display:none\"><div class=\"js-complex-content complex-content\"><\/div><\/div><\/div><div class=\"misc clearfix\"><div class=\"content-actions clearfix\"><div class=\"word-counter pull-right\">还能输入 <i>300<\/i> 个字<\/div><\/div><\/div><\/div><div class=\"wb-sender__actions in-editor\"><button class=\"js-btn-confirm2 btn btn-primary\">确定<\/button><\/div><\/div><\/div><\/div><\/div><\/div>";
+			//			回复模板2
+			var titlebox2 =
+				"<div class=\"popover-inner popover-reply\"><div class=\"popover-content\"><div class=\"form-horizontal\"><div class=\"wb-sender\"><div class=\"wb-sender__inner\"><div class=\"wb-sender__input\"><div class=\"misc top clearfix\"><div class=\"content-actions clearfix\"><div class=\"editor-module insert-emotion\"><a class=\"js-open-wx_emotion\" data-action-type=\"emotion\" href=\"javascript:;\">表情<\/a><div class=\"emotion-wrapper\" style=\"display:none;top:16px;left:-185px\"><ul class=\"emotion-container clearfix\"><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/01.gif\" alt=\"[微笑]\" title=\"[微笑]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/02.gif\" alt=\"[撇嘴]\" title=\"[撇嘴]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/03.gif\" alt=\"[色]\" title=\"[色]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/04.gif\" alt=\"[发呆]\" title=\"[发呆]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/05.gif\" alt=\"[得意]\" title=\"[得意]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/06.gif\" alt=\"[流泪]\" title=\"[流泪]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/07.gif\" alt=\"[害羞]\" title=\"[害羞]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/08.gif\" alt=\"[闭嘴]\" title=\"[闭嘴]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/09.gif\" alt=\"[睡]\" title=\"[睡]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/10.gif\" alt=\"[大哭]\" title=\"[大哭]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/11.gif\" alt=\"[尴尬]\" title=\"[尴尬]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/12.gif\" alt=\"[发怒]\" title=\"[发怒]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/13.gif\" alt=\"[调皮]\" title=\"[调皮]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/14.gif\" alt=\"[呲牙]\" title=\"[呲牙]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/15.gif\" alt=\"[惊讶]\" title=\"[惊讶]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/16.gif\" alt=\"[难过]\" title=\"[难过]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/17.gif\" alt=\"[酷]\" title=\"[酷]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/18.gif\" alt=\"[冷汗]\" title=\"[冷汗]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/19.gif\" alt=\"[抓狂]\" title=\"[抓狂]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/20.gif\" alt=\"[吐]\" title=\"[吐]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/21.gif\" alt=\"[偷笑]\" title=\"[偷笑]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/22.gif\" alt=\"[愉快]\" title=\"[愉快]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/23.gif\" alt=\"[白眼]\" title=\"[白眼]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/24.gif\" alt=\"[傲慢]\" title=\"[傲慢]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/25.gif\" alt=\"[饥饿]\" title=\"[饥饿]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/26.gif\" alt=\"[困]\" title=\"[困]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/27.gif\" alt=\"[惊恐]\" title=\"[惊恐]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/28.gif\" alt=\"[流汗]\" title=\"[流汗]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/29.gif\" alt=\"[憨笑]\" title=\"[憨笑]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/30.gif\" alt=\"[悠闲]\" title=\"[悠闲]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/31.gif\" alt=\"[奋斗]\" title=\"[奋斗]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/32.gif\" alt=\"[咒骂]\" title=\"[咒骂]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/33.gif\" alt=\"[疑问]\" title=\"[疑问]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/34.gif\" alt=\"[嘘]\" title=\"[嘘]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/35.gif\" alt=\"[晕]\" title=\"[晕]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/36.gif\" alt=\"[疯了]\" title=\"[疯了]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/37.gif\" alt=\"[衰]\" title=\"[衰]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/38.gif\" alt=\"[骷髅]\" title=\"[骷髅]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/39.gif\" alt=\"[敲打]\" title=\"[敲打]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/40.gif\" alt=\"[再见]\" title=\"[再见]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/41.gif\" alt=\"[擦汗]\" title=\"[擦汗]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/42.gif\" alt=\"[抠鼻]\" title=\"[抠鼻]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/43.gif\" alt=\"[鼓掌]\" title=\"[鼓掌]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/44.gif\" alt=\"[糗大了]\" title=\"[糗大了]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/45.gif\" alt=\"[坏笑]\" title=\"[坏笑]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/46.gif\" alt=\"[左哼哼]\" title=\"[左哼哼]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/47.gif\" alt=\"[右哼哼]\" title=\"[右哼哼]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/48.gif\" alt=\"[哈欠]\" title=\"[哈欠]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/49.gif\" alt=\"[鄙视]\" title=\"[鄙视]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/50.gif\" alt=\"[委屈]\" title=\"[委屈]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/51.gif\" alt=\"[快哭了]\" title=\"[快哭了]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/52.gif\" alt=\"[阴险]\" title=\"[阴险]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/53.gif\" alt=\"[亲亲]\" title=\"[亲亲]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/54.gif\" alt=\"[吓]\" title=\"[吓]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/55.gif\" alt=\"[可怜]\" title=\"[可怜]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/56.gif\" alt=\"[菜刀]\" title=\"[菜刀]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/57.gif\" alt=\"[西瓜]\" title=\"[西瓜]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/58.gif\" alt=\"[啤酒]\" title=\"[啤酒]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/59.gif\" alt=\"[篮球]\" title=\"[篮球]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/60.gif\" alt=\"[乒乓]\" title=\"[乒乓]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/61.gif\" alt=\"[咖啡]\" title=\"[咖啡]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/62.gif\" alt=\"[饭]\" title=\"[饭]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/63.gif\" alt=\"[猪头]\" title=\"[猪头]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/64.gif\" alt=\"[玫瑰]\" title=\"[玫瑰]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/65.gif\" alt=\"[凋谢]\" title=\"[凋谢]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/66.gif\" alt=\"[嘴唇]\" title=\"[嘴唇]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/67.gif\" alt=\"[爱心]\" title=\"[爱心]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/68.gif\" alt=\"[心碎]\" title=\"[心碎]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/69.gif\" alt=\"[蛋糕]\" title=\"[蛋糕]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/70.gif\" alt=\"[闪电]\" title=\"[闪电]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/71.gif\" alt=\"[炸弹]\" title=\"[炸弹]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/72.gif\" alt=\"[刀]\" title=\"[刀]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/73.gif\" alt=\"[足球]\" title=\"[足球]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/74.gif\" alt=\"[瓢虫]\" title=\"[瓢虫]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/75.gif\" alt=\"[便便]\" title=\"[便便]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/76.gif\" alt=\"[月亮]\" title=\"[月亮]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/77.gif\" alt=\"[太阳]\" title=\"[太阳]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/78.gif\" alt=\"[礼物]\" title=\"[礼物]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/79.gif\" alt=\"[拥抱]\" title=\"[拥抱]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/80.gif\" alt=\"[强]\" title=\"[强]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/81.gif\" alt=\"[弱]\" title=\"[弱]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/82.gif\" alt=\"[握手]\" title=\"[握手]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/83.gif\" alt=\"[胜利]\" title=\"[胜利]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/84.gif\" alt=\"[抱拳]\" title=\"[抱拳]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/85.gif\" alt=\"[勾引]\" title=\"[勾引]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/86.gif\" alt=\"[拳头]\" title=\"[拳头]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/87.gif\" alt=\"[差劲]\" title=\"[差劲]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/88.gif\" alt=\"[爱你]\" title=\"[爱你]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/89.gif\" alt=\"[NO]\" title=\"[NO]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/90.gif\" alt=\"[OK]\" title=\"[OK]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/91.gif\" alt=\"[爱情]\" title=\"[爱情]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/92.gif\" alt=\"[飞吻]\" title=\"[飞吻]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/93.gif\" alt=\"[跳跳]\" title=\"[跳跳]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/94.gif\" alt=\"[发抖]\" title=\"[发抖]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/95.gif\" alt=\"[怄火]\" title=\"[怄火]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/96.gif\" alt=\"[转圈]\" title=\"[转圈]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/97.gif\" alt=\"[磕头]\" title=\"[磕头]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/98.gif\" alt=\"[回头]\" title=\"[回头]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/99.gif\" alt=\"[跳绳]\" title=\"[跳绳]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/100.gif\" alt=\"[投降]\" title=\"[投降]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/101.gif\" alt=\"[激动]\" title=\"[激动]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/102.gif\" alt=\"[乱舞]\" title=\"[乱舞]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/103.gif\" alt=\"[献吻]\" title=\"[献吻]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/104.gif\" alt=\"[左太极]\" title=\"[左太极]\"><\/li><li><img src=\"//static.koudaitong.com/v1/assets/ueditor/build/dialogs/emotion/images/qq/105.gif\" alt=\"[右太极]\" title=\"[右太极]\"><\/li><\/ul><\/div><\/div><div class=\"editor-module insert-hyperlink\"><a class=\"js-open-hyperlink\" data-action-type=\"hyperlink\" href=\"javascript:;\">插入链接<\/a><div class=\"hyperlink-wrapper\" style=\"display:none\"><input class=\"js-txt input-large txt\" type=\"text\" placeholder=\"http://\"> <button class=\"js-btn-hyperlink btn btn-primary\">确定<\/button><\/div><\/div><div class=\"editor-module insert-articles\"><a class=\"js-open-articles\" data-action-type=\"articles\" href=\"javascript:;\">选择图文<\/a><div class=\"articles-wrapper\"><\/div><\/div><\/div><\/div><div class=\"content-wrapper\"><textarea class=\"js-txta\" cols=\"50\" rows=\"4\"><\/textarea><div class=\"js-picture-container picture-container\"><\/div><div class=\"complex-backdrop\" style=\"display:none\"><div class=\"js-complex-content complex-content\"><\/div><\/div><\/div><div class=\"misc clearfix\"><div class=\"content-actions clearfix\"><div class=\"word-counter pull-right\">还能输入 <i>300<\/i> 个字<\/div><\/div><\/div><\/div><div class=\"wb-sender__actions in-editor\"><button class=\"js-btn-confirm btn btn-primary\">确定<\/button><\/div><\/div><\/div><\/div><\/div><\/div>";
+			//整块规则
+			var rule =
+				"<div class=\"rule-group\"><div class=\"rule-meta\"><h3><em class=\"rule-id\">3)<\/em> <span class=\"rule-name\">未命名规则<\/span><div class=\"rule-opts\"><a href=\"javascript:;\" class=\"js-edit-rule\">编辑<\/a> <span>-<\/span> <a href=\"javascript:;\" class=\"js-delete-rule\">删除<\/a><\/div><\/h3><\/div><div class=\"rule-body\"><div class=\"long-dashed\"><\/div><div class=\"rule-keywords\"><div class=\"rule-inner\"><h4>关键词：<\/h4><div class=\"keyword-container\"><div class=\"info\"><\/div><div class=\"keyword-list\"><\/div><\/div><hr class=\"dashed\"><div class=\"opt\"><a href=\"javascript:;\" class=\"js-add-keyword\">+ 添加关键词<\/a><\/div><\/div><\/div><div class=\"rule-replies\"><div class=\"rule-inner\"><h4>自动回复： <span class=\"send-method\">随机发送<\/span><\/h4><div class=\"reply-container\"><div class=\"info\"><\/div><ol class=\"reply-list\"><\/ol><\/div><hr class=\"dashed\"><div class=\"opt\"><a class=\"js-add-reply add-reply-menu\" href=\"javascript:;\">+ 添加一条回复<\/a> <span class=\"disable-opt hide\">最多十条回复<\/span><\/div><\/div><\/div><\/div><\/div>";
+			//			图文选择模板
+			var modalbox =
+				"<div class=\'articles-wrapper\'> <div class=\"modal-header\"><a class=\"close js-news-modal-dismiss \" data-dismiss=\"modal\" >×<\/a> <ul class=\"module-nav modal-tab\"><li class=\"active\"><a href=\"#js-module-news\" data-type=\"news\" class=\"js-modal-tab\">高级图文<\/a> |<\/li><li><a href=\"#js-module-mpNews\" data-type=\"mpNews\" class=\"js-modal-tab\">微信图文<\/a> |<\/li><li class=\"link-group link-group-0\" style=\"display:inline-block\"><a href=\"//koudaitong.com/v2/weixin/advancednews#list\" target=\"_blank\" class=\"new_window\">高级图文素材管理<\/a><\/li><li class=\"link-group link-group-1\" style=\"display:none\"><a href=\"//koudaitong.com/v2/weixin/imagetext#list\" target=\"_blank\" class=\"new_window\">微信图文素材管理<\/a><\/li><\/ul><\/div><div class=\"modal-body\"><div class=\"tab-content\"><div id=\"js-module-news\" class=\"tab-pane module-news active\"><table class=\"table\"><colgroup><col class=\"modal-col-title\"><col class=\"modal-col-time\" span=\"2\"><col class=\"modal-col-action\"><\/colgroup><thead><tr><th class=\"title\"><div class=\"td-cont\"><span>标题<\/span> <a class=\"js-update\" href=\"javascript:void(0);\">刷新<\/a><\/div><\/th><th class=\"time\"><div class=\"td-cont\"><span>创建时间<\/span><\/div><\/th><th class=\"opts\"><div class=\"td-cont\"><form class=\"form-search\"><div class=\"input-append\"><input class=\"input-small js-modal-search-input\" type=\"text\"><a href=\"javascript:void(0);\" class=\"btn js-fetch-page js-modal-search\" data-action-type=\"search\">搜<\/a><\/div><\/form><\/div><\/th><\/tr><\/thead><tbody><tr><td class=\"title\"><div class=\"td-cont\"><div class=\"ng ng-single\"><div class=\"ng-item\"><div class=\"ng-title\"><a href=\"https://wap.koudaitong.com/v2/showcase/goods?alias=si7rix1j\" target=\"_blank\" class=\"new-window\" title=\"粉刺针/挑痘痘 颜色随机发 - 测试商品，不发货，不退款\">粉刺针/挑痘痘 颜色随机发 - 测试商品，不发货，不退款<\/a><\/div><\/div><div class=\"ng-item view-more\"><a href=\"https://wap.koudaitong.com/v2/showcase/goods?alias=si7rix1j\" class=\"clearfix new-window\"><span class=\"pull-left\">阅读全文<\/span> <span class=\"pull-right\">&gt;<\/span><\/a><\/div><\/div><\/div><\/td><td class=\"time\"><div class=\"td-cont\"><span>2015-12-11<br>10:10:11<\/span><\/div><\/td><td class=\"opts\"><div class=\"td-cont\"><button class=\"btn js-choose\" href=\"#\" data-id=\"25660894\" data-url=\"\" data-page-type=\"news\" data-cover-attachment-id=\"\" data-cover-attachment-url=\"\" data-title=\"粉刺针/挑痘痘 颜色随机发 - 测试商品，不发货，不退款\" data-alias=\"\">选取<\/button><\/div><\/td><\/tr><tr><td class=\"title\"><div class=\"td-cont\"><div class=\"ng ng-single\"><div class=\"ng-item\"><div class=\"ng-title\"><a href=\"https://wap.koudaitong.com/v2/showcase/homepage?alias=10xku6w9b\" target=\"_blank\" class=\"new-window\" title=\"店铺主页\">店铺主页<\/a><\/div><\/div><div class=\"ng-item view-more\"><a href=\"https://wap.koudaitong.com/v2/showcase/homepage?alias=10xku6w9b\" class=\"clearfix new-window\"><span class=\"pull-left\">阅读全文<\/span> <span class=\"pull-right\">&gt;<\/span><\/a><\/div><\/div><\/div><\/td><td class=\"time\"><div class=\"td-cont\"><span>2015-12-11<br>10:08:16<\/span><\/div><\/td><td class=\"opts\"><div class=\"td-cont\"><button class=\"btn js-choose\" href=\"#\" data-id=\"25660484\" data-url=\"\" data-page-type=\"news\" data-cover-attachment-id=\"\" data-cover-attachment-url=\"\" data-title=\"店铺主页\" data-alias=\"\">选取<\/button><\/div><\/td><\/tr><tr><td class=\"title\"><div class=\"td-cont\"><div class=\"ng ng-single\"><div class=\"ng-item\"><div class=\"ng-title\"><a href=\"https://wap.koudaitong.com/v2/showcase/goods?alias=11fhrld3r\" target=\"_blank\" class=\"new-window\" title=\"纪梵希亮彩粉底液(隔离防晒修饰乳)30ML - 测试商品，不发货，不退款\">纪梵希亮彩粉底液(隔离防晒修饰乳)30ML - 测试商品，不发货，不退款<\/a><\/div><\/div><div class=\"ng-item view-more\"><a href=\"https://wap.koudaitong.com/v2/showcase/goods?alias=11fhrld3r\" class=\"clearfix new-window\"><span class=\"pull-left\">阅读全文<\/span> <span class=\"pull-right\">&gt;<\/span><\/a><\/div><\/div><\/div><\/td><td class=\"time\"><div class=\"td-cont\"><span>2015-12-11<br>10:08:15<\/span><\/div><\/td><td class=\"opts\"><div class=\"td-cont\"><button class=\"btn js-choose\" href=\"#\" data-id=\"25660479\" data-url=\"\" data-page-type=\"news\" data-cover-attachment-id=\"\" data-cover-attachment-url=\"\" data-title=\"纪梵希亮彩粉底液(隔离防晒修饰乳)30ML - 测试商品，不发货，不退款\" data-alias=\"\">选取<\/button><\/div><\/td><\/tr><\/tbody><\/table><\/div><\/div><\/div><div class=\"modal-footer\"><div style=\"display:none\" class=\"js-confirm-choose pull-left\"><input type=\"button\" class=\"btn btn-primary\" value=\"确定使用\"><\/div><div class=\"pagenavi\"><span class=\"total\">共 8 条，每页 3 条<\/span> <a data-page-num=\"1\" href=\"javascript:void(0);\" class=\"num active\" contenteditable=\"true\">1<\/a> <a class=\"fetch_page num\" data-page-num=\"2\" href=\"javascript:void(0);\">2<\/a> <a class=\"fetch_page num\" data-page-num=\"3\" href=\"javascript:void(0);\">3<\/a> <a class=\"fetch_page next\" data-page-num=\"2\" href=\"javascript:void(0);\">下一页<\/a> <\/div><\/div></div>";
+			//			自动回复文本
+			var hftxt =
+				"<li><div class=\"reply-cont\"><div class=\"reply-summary\"><span class=\"label label-success\">文本<\/span> 113<\/div><\/div><div class=\"reply-opts\"><a class=\"js-edit-it\" href=\"javascript:;\">编辑<\/a> - <a class=\"js-delete-it\" href=\"javascript:;\">删除<\/a><\/div><\/li>";
+			//			自动回复图文
+			var hftw =
+				"<li><div class=\"reply-cont\"><div class=\"reply-summary\"><span class=\"label label-success\">图文<\/span> <a href=\"https://wap.koudaitong.com/v2/showcase/mpnews?alias=3zwr5i0s\" target=\"_blank\" class=\"new-window\">demo<\/a><\/div><\/div><div class=\"reply-opts\"><a class=\"js-edit-it\" href=\"javascript:;\">编辑<\/a> - <a class=\"js-delete-it\" href=\"javascript:;\">删除<\/a><\/div><\/li>";
+			$(function() {
+				//	新建弹出
+				function Popovercon() {
+					$(document).on("click", '.js-nav-add-rule', function() {
+						var rulelen = $(".rule-group").length
+						if (rulelen >= 10) {
+							alert("超过限制")
+						} else {
+							$(this).popModal({
+								html: hfbox,
+								placement: 'bottomLeft',
+								showCloseBut: true
+							});
+						}
+					})
+					$(document).on("click", ".js-edit-rule", function() {
+						$(this).popModal({
+							html: hfeditbox,
+							placement: 'bottomLeft',
+							showCloseBut: true
+						});
+					})
+					$(document).on("click", ".js-add-keyword", function() {
+						$(this).popModal({
+							html: keybox,
+							placement: 'bottomLeft',
+							showCloseBut: true
+						});
+					})
+					$(document).on("click", ".js-add-reply", function() {
+						$(this).popModal({
+							html: titlebox,
+							placement: 'bottomLeft',
+							showCloseBut: true
+						});
+					})
+					$(document).on("click", ".js-edit-it", function() {
+						$(this).popModal({
+							html: titlebox2,
+							placement: 'bottomCenter',
+							showCloseBut: true
+						});
+					})
+					return false;
+				}
+				Popovercon();
+				//				新建自动回复
+				$(document).on("click", ".hfconfirm", function() {
+					var Valinput = $(this).prev(".addrule").find("input").val();
+					//						alert(Valinput)
+					window.a = 1;
+					$(".rule-name").each(function() {
+						if (Valinput == $(this).text()) {
+							alert("不能使用重复规则命名")
+						}
+						window.a = 0
+					})
+					//						alert($(".rule-name").text())
+					if (window.a = 1) {
+						var rule =
+							"<div class=\"rule-group\"><div class=\"rule-meta\"><h3><em class=\"rule-id\">3)<\/em> <span class=\"rule-name\">" +
+							Valinput +
+							"<\/span><div class=\"rule-opts\"><a href=\"javascript:;\" class=\"js-edit-rule\">编辑<\/a> <span>-<\/span> <a href=\"javascript:;\" class=\"js-delete-rule\">删除<\/a><\/div><\/h3><\/div><div class=\"rule-body\"><div class=\"long-dashed\"><\/div><div class=\"rule-keywords\"><div class=\"rule-inner\"><h4>关键词：<\/h4><div class=\"keyword-container\"><div class=\"info\"><\/div><div class=\"keyword-list\"><\/div><\/div><hr class=\"dashed\"><div class=\"opt\"><a href=\"javascript:;\" class=\"js-add-keyword\">+ 添加关键词<\/a><\/div><\/div><\/div><div class=\"rule-replies\"><div class=\"rule-inner\"><h4>自动回复： <span class=\"send-method\">随机发送<\/span><\/h4><div class=\"reply-container\"><div class=\"info\"><\/div><ol class=\"reply-list\"><\/ol><\/div><hr class=\"dashed\"><div class=\"opt\"><a class=\"js-add-reply add-reply-menu\" href=\"javascript:;\">+ 添加一条回复<\/a> <span class=\"disable-opt hide\">最多十条回复<\/span><\/div><\/div><\/div><\/div><\/div>";
+						$(".rule-group-container").append(rule);
+						gpnum();
+						delremove();
+						Popover();
+						$(this).parents(".popModal_content").prev(".close").trigger("click");
+					}
+					return false;
+				})
+
+				function Popover() {
+					//	规则编辑弹出
+					$(document).on("click", ".js-edit-rule", function() {
+						var thistitle = $(this).parent(".rule-opts").prev(".rule-name").text();
+						var ruleindex = $(this).parents(".rule-group").index();
+						$(this).parent(".rule-opts").find(".hfedit-txt").attr("value", thistitle)
+					})
+					////	规则编辑确定
+					$(document).on("click", ".hfeditconfirm", function() {
+						var Valinput = $(this).prev(".controls").find(".hfedit-txt").val();
+						$(this).parents(".rule-meta").find(".rule-name").html(Valinput)
+						$(this).parents(".popModal_content").prev(".close").trigger("click")
+					})
+					return false;
+				}
+				Popover()
+				//				关键词编辑
+				$(document).on("click", ".keyconfirm", function() {
+					var keyinput = $(this).parent(".form-actions").parent(".form-horizontal").find(".key-txt").val();
+					var keyincheck = $(this).parent(".form-actions").parent(".form-horizontal").find("input:checked").parent(
+						".radio").text();
+					//					alert(keyincheck)
+					var keybox =
+						"<div class=\"keyword input-append\"><a href=\"javascript:;\" class=\"close--circle\">×<\/a> <span class=\"value\">" +
+						keyinput + "<\/span> <span class=\"add-on\">" + keyincheck + "<\/span> <\/div>";
+					if (keyinput == null || keyinput == "") {
+						alert("必须填写")
+					} else {
+						if ($(this).parent(".form-actions").parent(".form-horizontal").find("input:checked").length == 0) {
+							alert("必须选择")
+						} else {
+							if (keyinput.length > 15) {
+								alert("长度超过限制")
+							} else {
+								$(this).parents(".rule-keywords").find(".keyword-list").append(keybox)
+								delremove();
+								$(this).parents(".popModal_content").prev(".close").trigger("click")
+							}
+						}
+					}
+					return false;
+				})
+				//				关键词添加表情
+				$(document).on("click", ".emotion-container>li", function() {
+					var emtionval = $(this).find("img").attr("title")
+					var emtionadd = $(this).parents(".controls").find(".key-txt").val()
+					$(this).parents(".controls").find(".key-txt").val(emtionadd + emtionval)
+				})
+				//				关键词表情编辑
+				$(document).on("click", ".js-emotion", function() {
+					var emtion = $(this).next(".emotion-wrapper").css("display");
+					switch (emtion) {
+						case "none":
+							$(this).next(".emotion-wrapper").css("display", "block");
+							break
+						case "block":
+							$(this).next(".emotion-wrapper").css("display", "none");
+							break
+					}
+				})
+				//				回复表情编辑
+				$(document).on("click", ".js-open-wx_emotion", function() {
+					var emtionadd = $(this).next(".emotion-wrapper").css("display");
+					switch (emtionadd) {
+						case "none":
+							$(this).next(".emotion-wrapper").css("display", "block");
+							break
+						case "block":
+							$(this).next(".emotion-wrapper").css("display", "none");
+							break
+					}
+				})
+				//				回复链接编辑
+				$(document).on("click", ".js-open-hyperlink", function() {
+					var linkadd = $(this).next(".hyperlink-wrapper").css("display");
+					switch (linkadd) {
+						case "none":
+							$(this).next(".hyperlink-wrapper").css("display", "block");
+							break
+						case "block":
+							$(this).next(".hyperlink-wrapper").css("display", "none");
+							break
+					}
+				})
+				//				回复图文编辑
+				$(document).on("click", ".js-open-articles", function() {
+					$('#mcover').show();
+					$(".modalcon").html(modalbox)
+					$(".js-choose").unbind("click");
+					addedit($(this));
+					return false;
+				})
+				//					回复图文
+				function addedit(obj) {
+					$(".js-choose").on("click", function() {
+						var ngtitle = $(this).parents("tr").find(".td-cont").html();
+						obj.parents(".misc").next(".content-wrapper").find("textarea").val("")
+						obj.parents(".misc").next(".content-wrapper").find(".complex-content").empty().html(ngtitle);
+						obj.parents(".misc").next(".content-wrapper").find(".complex-backdrop").css("display", "block")
+						//							alert(obj.attr("class"))
+						$('#mcover').hide();
+						//							$(".modalcon").empty();
+					})
+				}
+				//				回复图文关闭
+				$(document).on("click", ".js-news-modal-dismiss", function() {
+					$('#mcover').hide();
+					$(".modalcon").empty();
+					return false;
+				})
+				//				回复添加确定按钮
+				$(document).on("click", ".js-btn-confirm2", function() {
+					var hftext = $(this).parent(".wb-sender__actions").prev(".wb-sender__input").find("textarea").val();
+					var twtext = $(this).parent(".wb-sender__actions").prev(".wb-sender__input").find(".js-complex-content").html()
+					var hftxt =
+						"<li><div class=\"reply-cont\"><div class=\"reply-summary\"><span class=\"label label-success\">文本<\/span><span> " +
+						hftext +
+						" </span> <\/div><\/div><div class=\"reply-opts\"><a class=\"js-edit-it\" href=\"javascript:;\">编辑<\/a> - <a class=\"js-delete-it\" href=\"javascript:;\">删除<\/a><\/div><\/li>";
+					var twtitle = $(this).parent(".wb-sender__actions").prev(".wb-sender__input").find(".js-complex-content").find(
+						"a").attr("title")
+					var twhref = $(this).parent(".wb-sender__actions").prev(".wb-sender__input").find(".js-complex-content").find(
+						"a").attr("href")
+					var twtxt =
+						"<li><div class=\"reply-cont\"><div class=\"reply-summary\"><span class=\"label label-success\">图文<\/span> <span><a href=" +
+						twhref + "   target=\"_blank\" class=\"new-window\"> " + twtitle +
+						" <\/a><\/span><\/div><\/div><div class=\"reply-opts\"><a class=\"js-edit-it\" href=\"javascript:;\">编辑<\/a> - <a class=\"js-delete-it\" href=\"javascript:;\">删除<\/a><\/div><\/li>";
+					if (hftext == null || hftext == "") {
+						if (twtext == null || twtext == "") {
+							$(this).parents(".popModal_content").prev(".close").trigger("click")
+						} else {
+							$(this).parents(".rule-inner").find(".reply-list").append(twtxt);
+							$(this).parents(".popModal_content").prev(".close").trigger("click")
+						}
+					} else {
+						$(this).parents(".rule-inner").find(".reply-list").append(hftxt);
+						$(this).parents(".popModal_content").prev(".close").trigger("click");
+					}
+					delremove();
+				})
+				//				回复链接添加
+				$(document).on("click", ".js-btn-hyperlink", function() {
+					var hyperlink = $(this).prev(".js-txt").val();
+					$(this).parents(".misc").next(".content-wrapper").find("textarea").val(hyperlink);
+					$(this).parent(".hyperlink-wrapper").css("display", "none");
+				})
+				//				回复添加表情
+				$(document).on("click", ".emotion-container>li", function() {
+					var emtionval = $(this).find("img").attr("title")
+					var emtionadd = $(this).parents(".misc").next(".content-wrapper").find(".js-txta").val()
+					$(this).parents(".misc").next(".content-wrapper").find(".js-txta").val(emtionadd + emtionval)
+					$(this).parents(".emotion-wrapper").css("display", "none")
+				})
+				//					回复修改
+				$(document).on("click", ".js-edit-it", function() {
+					var replyname = $(this).parent(".reply-opts").prev(".reply-cont").find("span:eq(1)").text();
+					var emtionadd = $(this).parent(".reply-opts").find(".js-txta").val();
+					var replytwtitle = $(this).parent(".reply-opts").prev(".reply-cont").find("a").text();
+					var replytwhref = $(this).parent(".reply-opts").prev(".reply-cont").find("a").attr("href");
+					var labeltext = $(this).parents("li").find(".label-success").text();
+					var ngmodal =
+						"<div class=\"ng ng-single\"><a href=\"javascript:;\" class=\"close--circle js-delete-complex\">×</a><div class=\"ng-item\"><div class=\"ng-title\"><a href=" +
+						replytwhref + " target=\"_blank\" class=\"new-window\" title=" + replytwtitle + " >" + replytwtitle +
+						"<\/a><\/div><\/div><div class=\"ng-item view-more\"><a href=\"https://wap.koudaitong.com/v2/showcase/goods?alias=si7rix1j\" class=\"clearfix new-window\"><span class=\"pull-left\">阅读全文<\/span> <span class=\"pull-right\">><\/span><\/a><\/div><\/div>";
+					switch (labeltext) {
+						case "文本":
+							$(this).parent(".reply-opts").find(".js-txta").val(replyname);
+							break
+						case "图文":
+							console.log("ceshi")
+							$(this).parent(".reply-opts").find(".complex-backdrop").css("display", "block")
+							$(this).parent(".reply-opts").find(".complex-content").empty().html(ngmodal);
+					}
+					$(this).parents(".emotion-wrapper").css("display", "none")
+				})
+				//					回复编辑确定按钮
+				$(document).on("click", ".js-btn-confirm", function() {
+					var hftext = $(this).parent(".wb-sender__actions").prev(".wb-sender__input").find("textarea").val();
+					var twtext = $(this).parent(".wb-sender__actions").prev(".wb-sender__input").find(".js-complex-content").html()
+					var twtitle = $(this).parent(".wb-sender__actions").prev(".wb-sender__input").find(".js-complex-content").find(
+						"a").attr("title")
+					var twhref = $(this).parent(".wb-sender__actions").prev(".wb-sender__input").find(".js-complex-content").find(
+						"a").attr("href")
+					if (hftext == null || hftext == "") {
+						if (twtext == null || twtext == "") {
+							$(this).parents(".popModal_content").prev(".close").trigger("click")
+						} else {
+							var twtxt =
+								"<li><div class=\"reply-cont\"><div class=\"reply-summary\"><span class=\"label label-success\">图文<\/span> <span><a href=" +
+								twhref + "   target=\"_blank\" class=\"new-window\"> " + twtitle +
+								" <\/a><\/span><\/div><\/div><div class=\"reply-opts\"><a class=\"js-edit-it\" href=\"javascript:;\">编辑<\/a> - <a class=\"js-delete-it\" href=\"javascript:;\">删除<\/a><\/div><\/li>";
+							var twbox = "<div class=\"reply-summary\"><span class=\"label label-success\">图文<\/span> <span><a href=" +
+								twhref + "   target=\"_blank\" class=\"new-window\">" + twtitle + "<\/a><\/span><\/div>";
+							$(this).parents(".reply-opts").prev(".reply-cont").find(".reply-summary").html(twbox)
+							$(this).parents(".reply-opts").prev(".reply-cont").find("span:eq(1)").find("a").attr("href", twhref)
+							$(this).parents(".reply-opts").prev(".reply-cont").find("span:eq(1)").find("a").text(twtitle)
+							$(this).parents(".popModal_content").prev(".close").trigger("click")
+						}
+					} else {
+						$(this).parents(".reply-opts").prev(".reply-cont").find("span:eq(1)").text(hftext)
+						$(this).parents(".popModal_content").prev(".close").trigger("click");
+					}
+					delremove();
+				})
+			})
+			//			删除按钮
+			function delremove() {
+				$(".js-delete-it").on("click", function() {
+					$(this).parents("li").remove()
+				})
+				$(".js-delete-rule").on("click", function() {
+					$(this).parents(".rule-group").remove();
+					gpnum();
+				})
+				$(".close--circle").on("click", function() {
+					$(this).parent(".keyword").remove()
+				})
+			}
+			delremove();
+			//	更改条数和序号事件
+			function gpnum() {
+				var grouplength = $(".rule-group").length
+				for (var groupnum = 0; groupnum < grouplength; groupnum++) {
+					$(".rule-id:eq(" + groupnum + ")").html(groupnum + 1)
+				}
+				var totalgroup = "共 " + grouplength + " 条，每页 10 条"
+				$(".total").html(totalgroup)
+			}
+			gpnum();
+		</script>
+
+	</body>
+
+</html>

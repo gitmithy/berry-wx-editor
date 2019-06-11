@@ -1,0 +1,489 @@
+<html class="">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="renderer" content="webkit">
+		<meta name="referrer" content="always">
+
+		<title id="js-meta-title">
+			图文素材 - 飞煌微信分销</title>
+
+		<link rel="icon" href="https://b.yzcdn.cn/v2/image/yz_fc.ico">
+
+		<meta name="keywords" content="有赞,微信商城,粉丝营销,微信商城运营">
+		<meta name="description" content="有赞是帮助商家在微信上搭建微信商城的平台，提供店铺、商品、订单、物流、消息和客户的管理模块，同时还提供丰富的营销应用和活动插件。">
+		<link rel="stylesheet" href="css/lib/chosen.jquery.20150826.min.css" />
+		<!-- ▼ Common CSS -->
+		<link rel="stylesheet" href="css/lib/jquery.ui.20151022.min.css" />
+		<link rel="stylesheet" href="css/lib/bootstrap_140705.min.css" />
+		<link rel="stylesheet" href="css/lib/pc_346e770ff6.css" />
+		<!-- ▲ Common CSS -->
+
+		<!-- ▼ App CSS -->
+		<link rel="stylesheet" href="css/image_text_28e2a4d1aa.css" />
+		<!-- ▲ App CSS -->
+
+		<!-- ▼ Common config -->
+
+		<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="https://su.yzcdn.cn/v2/build/www/pages/weixin/imagetext_1aaaba8389.js"></script>
+		<style type="text/css">
+			.mcover {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(255, 255, 255, 0.8);
+				display: none;
+				z-index: 20000;
+			}
+		</style>
+		<script src="https://b.yzcdn.cn/v2/vendor/ueditor/dist/lang/zh-cn/zh-cn.js" type="text/javascript" defer="defer"></script>
+		<link rel="stylesheet" href="css/lib/ueditor.css" />
+	</head>
+
+	<body class="theme theme--blue">
+
+		<!-- ▼ Main header -->
+
+		<!-- ▲ Main header -->
+
+		<!-- ▼ Main container -->
+		<div class="container">
+			<div class="app">
+				<div class="app-inner clearfix">
+					<div class="app-init-container">
+
+
+						<div class="app__content js-app-main">
+							<div class="app-design clearfix">
+
+								<div class="app-preview">
+									<div class="app-header"></div>
+									<div class="app-entry">
+										<div class="app-config js-config-region">
+											<div class="app-field clearfix">
+												<h1><span>微信图文</span></h1>
+											</div>
+										</div>
+
+										<div class="app-fields appmsg-multiple js-fields-region">
+											<div class="app-fields ui-sortable">
+												<div class="app-field clearfix not-sortable js-not-sortable">
+													<div class="appmsg appmsg-multiple-first">
+														<h4 class="appmsg-title">1</h4>
+														<p class="appmsg-meta">2015-12-23</p>
+														<div class="appmsg-thumb-wrap">
+
+															<p>封面图片</p>
+
+														</div>
+
+														<div class="appmsg-view-full clearfix">
+															<span>阅读全文</span>
+															<span class="pull-right">&gt;</span>
+														</div>
+													</div>
+
+													<div class="actions">
+														<div class="actions-wrap">
+															<span class="action edit">编辑</span>
+
+														</div>
+													</div>
+												</div>
+												<div class="app-field clearfix not-sortable js-not-sortable">
+													<div class="appmsg appmsg-multiple-others">
+														<h4 class="appmsg-title">2</h4>
+														<div class="appmsg-thumb-wrap">
+
+															<p>缩略图</p>
+
+														</div>
+													</div>
+
+													<div class="actions">
+														<div class="actions-wrap">
+															<span class="action edit">编辑</span>
+
+														</div>
+													</div>
+												</div>
+
+
+
+
+
+											</div>
+
+										</div>
+
+									</div>
+
+									<div class="js-add-region">
+										<div>
+											<div class="app-add-field">
+												<h4><a class="js-new-field app-add-image-text" data-field-type="image_text">+ 新增</a></h4>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="app-sidebar" style="margin-top: 317px;">
+									<div class="arrow"></div>
+
+									<div class="app-sidebar-inner js-sidebar-region">
+										<div class="edit-rich-text">
+											<form class="form-horizontal" novalidate="">
+
+												<div class="control-group">
+													<label>标题</label>
+													<input type="text" name="title" value="" data-error-style="block">
+												</div>
+
+												<div class="control-group">
+													<label>作者<span class="label-desc">（选填）</span></label>
+													<input type="text" name="author" value="" data-error-style="block">
+												</div>
+
+												<div class="control-group image-region js-image-region">
+													<div>
+														<label>封面<span class="label-desc">（图片建议尺寸：200 x 200像素）</span></label>
+
+														<a class="js-add-image control-action" href="javascript:;">添加图片...</a>
+
+														<input type="hidden" name="image" data-error-style="block">
+													</div>
+												</div>
+
+												<div class="control-group">
+													<label class="checkbox">
+														<input type="checkbox" name="show_image">封面图片显示在正文中
+													</label>
+												</div>
+
+												<div class="control-group digest">
+													<label>摘要</label>
+													<textarea name="digest" cols="30" rows="3" data-error-style="block"></textarea>
+												</div>
+
+												<div class="control-group">
+													<label>正文</label>
+
+
+													<script id="editor" name="content" type="text/plain">
+
+													</script>
+												</div>
+
+												<div class="control-group js-link-region">
+													<div>
+														<label>阅读原文</label>
+
+														<div class="dropup hover">
+															<a class="js-dropdown-toggle dropdown-toggle control-action" href="javascript:void(0);">设置链接到的页面地址 <i
+																 class="caret"></i></a>
+															<ul class="dropdown-menu">
+																<li>
+																	<a class="js-modal-magazine" data-type="feature" href="javascript:void(0);">微页面及分类</a>
+																</li>
+																<li>
+																	<a class="js-modal-goods" data-type="goods" href="javascript:void(0);">商品及分类</a>
+																</li>
+																<li>
+																	<a class="js-modal-activity" data-type="activity" href="javascript:void(0);">营销活动</a>
+																</li>
+																<li>
+																	<a class="js-modal-survey" data-type="survey" href="javascript:void(0);">投票调查</a>
+																</li>
+
+																<li>
+																	<a class="js-modal-homepage" data-type="homepage" href="javascript:void(0);">店铺主页</a>
+																</li>
+																<li>
+																	<a class="js-modal-usercenter" data-type="usercenter" href="javascript:void(0);">会员主页</a>
+																</li>
+																<li>
+																	<a class="js-modal-links" data-type="links" href="javascript:void(0);">自定义外链</a>
+																</li>
+															</ul>
+
+														</div>
+
+													</div>
+												</div>
+												<textarea name="editorValue" id="ueditor_textarea_editorValue" style="display: none;"></textarea>
+											</form>
+										</div>
+									</div>
+
+								</div>
+								<div class="app-actions" style="bottom: 0px;">
+									<div class="form-actions text-center">
+										<input class="btn btn-primary btn-add" type="submit" value="上 架" data-loading-text="上架...">
+
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="notify-bar js-notify animated hinge hide">
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- ▲ Main container -->
+		<div class="js-notifications notifications"></div>
+		<div class="back-to-top">
+			<a href="#" class="js-back-to-top"><i class="icon-chevron-up"></i>返回顶部</a>
+		</div>
+		<div class="float-service-wrap float-service-thumb">
+			<span class="float-service-close">×</span>
+			<a href="http://bbs.youzan.com/forum.php?gid=57" target="_blank" class="float-service">
+				<span class="float-service-content">联系客服</span>
+			</a>
+		</div>
+
+		<div id="js-page-help-open-btn" class="ui-page-help-open-btn">
+			<div class="ui-page-help-open-btn-icon"></div>
+			<div class="">帮助</div>
+		</div>
+
+		<div class="widget-notice-center">
+			<div class="widget-notice-center-ring-wrap js-notice-center-ring">
+				<div class="widget-notice-center-ring"></div>
+				<div class="widget-notice-center-txt">消息</div>
+			</div>
+			<div class="widget-notice-center-wrapper js-notice-center-wrapper ">
+				<div class="js-list-header-region">
+					<div class="widget-list-item">
+						<div class="widget-notice-center-title clearfix">
+							<h3 class="pull-left">
+								系统通知
+
+							</h3>
+							<a href="javascript:;" class="js-close pull-right">收起 》</a>
+						</div>
+					</div>
+				</div>
+				<div class="js-list-empty-region">
+					<div>
+						<div class="notice-empty">没有发现新信息</div>
+					</div>
+				</div>
+				<ul class="js-list-body-region widget-notice-center-content"></ul>
+				<div class="js-list-footer-region">
+					<div class="widget-list-footer">
+						<div class="widget-notice-center-footer">
+							<a href="javascript:;" class="mark-all-as-read js-mark-all-as-read">全部标记已读</a>
+							<a href="//koudaitong.com/v2/notice/dashboard" class="pull-right">查看全部信息</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div id="edui_fixedlayer" class="edui-default" style="position: fixed; left: 0px; top: 0px; width: 0px; height: 0px;">
+			<div id="edui105" class="edui-popup  edui-bubble edui-default" onmousedown="return false;" style="display: none;">
+				<div id="edui105_body" class="edui-popup-body edui-default">
+					<iframe style="position:absolute;z-index:-1;left:0;top:0;background-color: transparent;" frameborder="0" width="100%"
+					 height="100%" src="about:blank" class="edui-default"></iframe>
+					<div class="edui-shadow edui-default"></div>
+					<div id="edui105_content" class="edui-popup-content edui-default"> </div>
+				</div>
+			</div>
+			<div id="edui210" class="edui-popup  edui-bubble edui-default" onmousedown="return false;" style="display: none;">
+				<div id="edui210_body" class="edui-popup-body edui-default">
+					<iframe style="position:absolute;z-index:-1;left:0;top:0;background-color: transparent;" frameborder="0" width="100%"
+					 height="100%" src="about:blank" class="edui-default"></iframe>
+					<div class="edui-shadow edui-default"></div>
+					<div id="edui210_content" class="edui-popup-content edui-default"> </div>
+				</div>
+			</div>
+			<div id="edui315" class="edui-popup  edui-bubble edui-default" onmousedown="return false;" style="display: none;">
+				<div id="edui315_body" class="edui-popup-body edui-default">
+					<iframe style="position:absolute;z-index:-1;left:0;top:0;background-color: transparent;" frameborder="0" width="100%"
+					 height="100%" src="about:blank" class="edui-default"></iframe>
+					<div class="edui-shadow edui-default"></div>
+					<div id="edui315_content" class="edui-popup-content edui-default"> </div>
+				</div>
+			</div>
+		</div>
+		<div id="js-page-help-container" class="ui-page-help-container" style="margin-bottom: -86px;">
+			<div class="js-page-help-content ui-page-help-content" style="height: 126px;">
+				<p><strong><span style="color:#ff0000">图文素材是什么？</span></strong></p>
+				<p>有赞后台的图文素材分为高级图文（不可群发）和微信图文（可以群发），可以用于自动回复、一对一回复、自定义菜单等。</p>
+				<hr>
+				<p></p>
+				<p class="p1"><a href="http://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=20002&amp;extra=page%3D1" target="_blank"
+					 style="line-height: 1.5;">如何创建图文素材？</a></p>
+				<p class="p1" style="white-space: normal;"><span style="white-space: nowrap;"><a href="http://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=87&amp;extra=page%3D14"
+						 target="_blank">关于图文素材要知道的一些事情</a></span></p>
+			</div>
+			<div class="js-page-help-btn-action ui-page-help-btn-action">
+				<a href="//koudaitong.com/v2/service" class="ui-btn ui-btn-primary" target="_blank">进入帮助中心</a>
+				<a href="http://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=51125" class="ui-btn ui-btn-default" target="_blank"
+				 style="width:72px">建议反馈</a>
+				<!-- <a class="ui-btn" target="_blank" href="http://help.im.koudaitong.com">在线客服</a> -->
+
+			</div>
+		</div>
+		<div class="mcover" style="display: none;">
+			<!--<img src="img/guide.png">-->
+			<div>
+				<div class="modalcon"></div>
+
+			</div>
+		</div>
+		<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+		<script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+		<!--<script type="text/javascript" src="js/jBox.min.js" ></script>-->
+		<script type="text/javascript" src="popmodal/popModal.js"></script>
+		<script type="text/javascript" src="js/lib/ueditor.config.js"></script>
+
+		<script type="text/javascript" src="js/lib/ueditor.all.min.js"></script>
+		<script type="text/javascript" src="js/lib/lang/zh-cn/zh-cn.js"></script>
+		<script language="JavaScript">
+			var ue = UE.getEditor('editor');
+		</script>
+		<script language="JavaScript">
+			function date2str(x, y) {
+				var z = {
+					M: x.getMonth() + 1,
+					d: x.getDate(),
+					h: x.getHours(),
+					m: x.getMinutes(),
+					s: x.getSeconds()
+				};
+				y = y.replace(/(M+|d+|h+|m+|s+)/g, function(v) {
+					return ((v.length > 1 ? "0" : "") + eval('z.' + v.slice(-1))).slice(-2)
+				});
+				return y.replace(/(y+)/g, function(v) {
+					return x.getFullYear().toString().slice(-v.length)
+				});
+			}
+			date2str(new Date(), "yyyy-MM-dd hh:mm:ss")
+			var sortitem =
+				"<div class=\"app-field sortitem clearfix\"><div class=\"appmsg appmsg-multiple-others\"><h4 class=\"appmsg-title\">标题<\/h4><div class=\"appmsg-thumb-wrap\"><p>缩略图<\/p><\/div><\/div><div class=\"actions\"><div class=\"actions-wrap\"><span class=\"action edit\">编辑<\/span> <span class=\"action delete\">删除<\/span><\/div><\/div><\/div>";
+			var imagebox =
+				"<div class=\"widget-image modal fade hide in\" aria-hidden=\"false\" style=\"display:block\"><div class=\"modal-header\"><a class=\"close\" data-dismiss=\"modal\">×<\/a> <ul class=\"module-nav modal-tab js-modal-tab\"><li class=\"js-modal-tab-item js-modal-tab-image active\"><a href=\"javascript:;\" data-pane=\"image\">用过的图片<\/a> <span>|<\/span><\/li><li class=\"js-modal-tab-item js-modal-tab-icon\"><a href=\"javascript:;\" data-pane=\"icon\">图标库<\/a> <span>|<\/span><\/li><li class=\"js-modal-tab-item js-modal-tab-upload\"><a href=\"javascript:;\" data-pane=\"upload\">新图片<\/a><\/li><\/ul><\/div><div class=\"tab-pane js-tab-pane js-tab-pane-image js-image-region\"><div class=\"widget-list\"><div class=\"modal-body\"><div class=\"js-list-filter-region clearfix ui-box\" style=\"position:relative;min-height:28px\"><div class=\"widget-list-filter\"><div class=\"widget-image-refresh\"><span>点击图片即可选中<\/span> <a href=\"javascript:;\" class=\"js-refresh\">刷新<\/a><\/div><div class=\"js-list-search ui-search-box\"><input class=\"txt\" type=\"text\" placeholder=\"搜索\" value=\"\"><\/div><\/div><\/div><div class=\"ui-box\"><ul class=\"js-list-body-region widget-image-list\"><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"!179.8x179.8a1.2a0\"><p class=\"image-size\">!179.<br>26.1 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2015/12/15/2e23bdbd044c0a0c81dcc5db5639c506.jpeg?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">180x180<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"TB2D319cFXXXXcpXpXXXXXXXXXX_!!240544375\"><p class=\"image-size\">TB2D3<br>95.8 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2015/05/11/f1bf40c686b730368192a8dda0228ff2.jpg?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">465x465<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"TB2Sw99cFXXXXcAXpXXXXXXXXXX_!!240544375\"><p class=\"image-size\">TB2Sw<br>493.9 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2015/05/11/0deebbbc5f145c61a0bb004589a9e6bf.jpg?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">800x800<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"TB2Ii6pcFXXXXX5XXXXXXXXXXXX_!!240544375\"><p class=\"image-size\">TB2Ii<br>421.6 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2015/05/11/3446d4a9467b5014763270f5bc63bc34.jpg?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">800x800<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"TB2SPjucFXXXXXiXXXXXXXXXXXX_!!240544375\"><p class=\"image-size\">TB2SP<br>490.5 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2015/05/11/5a17695d6bccbfeaea52147891c41ea7.jpg?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">800x800<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"TB1ttspHFXXXXbjaXXXXXXXXXXX_!!0-item_pic\"><p class=\"image-size\">TB1tt<br>287.9 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2015/05/11/ac93311f8f777fefc0e9e7966dd06c8c.jpg?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">800x800<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"TB2iG.1cXXXXXaEXpXXXXXXXXXX_!!180039825\"><p class=\"image-size\">TB2iG<br>223.7 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2015/05/28/40f54662c7f56f8d11b40fb771df9053.jpg?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">1000x1000<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"TB2cLs8cXXXXXXHXXXXXXXXXXXX_!!180039825\"><p class=\"image-size\">TB2cL<br>203.2 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2015/05/28/a43805ad45e907636a1e9a94030c3d84.jpg?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">1000x1000<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"TB28576cXXXXXa2XXXXXXXXXXXX_!!180039825\"><p class=\"image-size\">TB285<br>233.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2015/05/28/aaa0b6fa86df3584e73dffe67e51fe43.jpg?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">1000x1000<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"TB2TfZYcXXXXXbYXpXXXXXXXXXX_!!180039825\"><p class=\"image-size\">TB2Tf<br>167.1 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2015/05/28/a2d615a6afd5c40f4ee090703a845c7c.jpg?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">1000x1000<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"TB2DqgYcXXXXXbFXpXXXXXXXXXX_!!180039825\"><p class=\"image-size\">TB2Dq<br>235.1 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2015/05/28/c08f4dc142774ff4a2a39552c3a380ba.jpg?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">1000x1000<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"TB10_gnHpXXXXXxXVXXXXXXXXXX_!!0-item_pic\"><p class=\"image-size\">TB10_<br>223.7 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2015/05/28/2d87904eb99ed914dddb65578f7efe65.jpg?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">1000x1000<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"主图2.jpg\"><p class=\"image-size\">主图2.j<br>108.9 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2015/04/21/Fmh3ILDS45kJui-jR6_AraUf8QKQ.jpg?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">480x480<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"主图1.jpg\"><p class=\"image-size\">主图1.j<br>108.9 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2015/04/21/FspYBqBW0_SGjBq5Q-eXs7yDSyI5.jpg?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">480x480<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><\/ul><div class=\"js-list-empty-region\"><\/div><\/div><\/div><div class=\"modal-footer js-list-footer-region\"><div class=\"widget-list-footer\"><div class=\"pull-left\"><a href=\"javascript:;\" class=\"ui-btn ui-btn-primary js-choose-image hide\">确定使用<\/a><\/div><div class=\"pagenavi\"><span class=\"total\">共 14 条，每页 27 条<\/span><\/div><\/div><\/div><\/div><\/div><div class=\"tab-pane js-tab-pane js-tab-pane-icon js-icon-region hide\"><div class=\"widget-list\"><div class=\"modal-body\"><div class=\"js-list-filter-region clearfix ui-box\" style=\"position:relative;min-height:28px\"><div class=\"widget-list-filter\"><div class=\"widget-image-filter\"><span class=\"c-gray\">风格:<\/span><label class=\"radio inline checked\"><input type=\"radio\" name=\"style\" value=\"0\" checked> <span>全部<\/span><\/label><label class=\"radio inline\"><input type=\"radio\" name=\"style\" value=\"1\"> <span>普通<\/span><\/label><label class=\"radio inline\"><input type=\"radio\" name=\"style\" value=\"2\"> <span>简约<\/span><\/label><\/div><div class=\"widget-image-filter\"><span class=\"c-gray\">颜色:<\/span><label class=\"radio inline checked\"><input type=\"radio\" name=\"color\" value=\"0\" checked> <span>全部<\/span><\/label><label class=\"radio inline\"><input type=\"radio\" name=\"color\" value=\"1\"> <span>白色<\/span><\/label><label class=\"radio inline\"><input type=\"radio\" name=\"color\" value=\"2\"> <span>灰色<\/span><\/label><\/div><div class=\"widget-image-filter\"><span class=\"c-gray\">类型:<\/span><label class=\"radio inline checked\"><input type=\"radio\" name=\"image_type\" value=\"0\" checked> <span>全部<\/span><\/label><label class=\"radio inline\"><input type=\"radio\" name=\"image_type\" value=\"1\"> <span>常规<\/span><\/label><label class=\"radio inline\"><input type=\"radio\" name=\"image_type\" value=\"2\"> <span>购物<\/span><\/label><label class=\"radio inline\"><input type=\"radio\" name=\"image_type\" value=\"3\"> <span>交通<\/span><\/label><label class=\"radio inline\"><input type=\"radio\" name=\"image_type\" value=\"4\"> <span>商务<\/span><\/label><label class=\"radio inline\"><input type=\"radio\" name=\"image_type\" value=\"5\"> <span>食物<\/span><\/label><label class=\"radio inline\"><input type=\"radio\" name=\"image_type\" value=\"6\"> <span>娱乐<\/span><\/label><label class=\"radio inline\"><input type=\"radio\" name=\"image_type\" value=\"7\"> <span>美妆<\/span><\/label><\/div><\/div><\/div><div class=\"ui-box\"><ul class=\"js-list-body-region widget-image-list\"><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/5fd9ce8c0ea95d0fc2bd41d756a9444f.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/f0a3b6e07ebccae5460f576debfdf56f.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/9c890df5da9191f234bb31a97dd62d4f.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/c14c3a503e4d78aa8526c4632578fc34.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/6c269d4d36c2b608c4b71963f2c34560.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/221dcea09852d3b4e482e31dbee42646.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/9d77f8ce3b9389a4b8549b07d9ba7336.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/dd9450b57a98872171152367c1685fb4.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/35a470776eb609fdba9ceddf6c3866a0.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/f705d4b123ab1ac78f57d7315b4b958e.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/91dbbb4f68264d8c4f1923c7e58cdcdb.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/6109e310c607babb10dc4f37681ba23e.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/986340a306706b10640a60ad2c57aa4a.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/24634782ad5f66aa739aee05f44b38ce.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/3af2885553d98ef3248824fc6d68af9e.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/bcd63663e6466e47af263606741cb8ba.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/c5e9642e6817bdd679aa4b7da4b12e45.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/e136345f29dacd1ef413a854b776f508.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/9ecfb12ff73732dc79bd11f92ce8290f.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/7512d36b62dc8fa06704d7e7135b138e.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/d0604969d71ec017206eb882be77f293.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/652a22cb0b23654b841bec6be14374f1.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/ee74ae7bf0ccc2c579db471dd0d18748.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/c59d01c5f8d8e39c9c55567abe511090.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/aaed086610e55bd0c1e9d1ef6eac35c7.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/d146b15ded0e72b1167fca117a2da242.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x100<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><li class=\"widget-image-item\"><div class=\"js-choose\" title=\"\"><p class=\"image-size\"><br>0.0 KB<\/p><div class=\"widget-image-item-content\" style=\"background-image:url(https://img.yzcdn.cn/upload_files/2014/12/05/b7b10371517724b7c922ca413a1a1f8e.png?imageView2/2/w/100/h/100/q/75/format/webp)\"><\/div><div class=\"widget-image-meta\">100x99<\/div><div class=\"selected-style\"><i class=\"icon-ok icon-white\"><\/i><\/div><\/div><\/li><\/ul><div class=\"js-list-empty-region\"><\/div><\/div><\/div><div class=\"modal-footer js-list-footer-region\"><div class=\"widget-list-footer\"><div class=\"pull-left\"><a href=\"javascript:;\" class=\"ui-btn ui-btn-primary js-choose-image hide\">确定使用<\/a><\/div><div class=\"pagenavi\"><span class=\"total\">共 1070 条，每页 27 条<\/span> <a data-page-num=\"1\" href=\"javascript:void(0);\" class=\"num active\">1<\/a> <a class=\"fetch_page num\" data-page-num=\"2\" href=\"javascript:void(0);\">2<\/a> ... <a class=\"fetch_page num\" data-page-num=\"40\" href=\"javascript:void(0);\">40<\/a> <span class=\"js-goto goto\"><span class=\"js-goto-input js-jump-page goto-input\" contenteditable=\"true\">1<\/span> <span>/ 40页<\/span><\/span> <a class=\"fetch_page next\" data-page-num=\"2\" href=\"javascript:void(0);\">下一页<\/a> <\/div><\/div><\/div><\/div><\/div><div class=\"tab-pane js-tab-pane js-tab-pane-upload js-upload-region hide\"><div><div class=\"js-upload-network-region\"><div><div class=\"modal-body\"><div class=\"get-web-img js-get-web-img\"><form class=\"form-horizontal\" onsubmit=\"return!1\"><div class=\"control-group\"><label class=\"control-label\">网络图片：<\/label><div class=\"controls\"><input type=\"text\" name=\"attachment_url\" class=\"get-web-img-input js-web-img-input\" placeholder=\"请贴入网络图片地址\" value=\"\"> <input type=\"button\" class=\"btn js-upload-network-img\" data-loading-text=\"提取中...\" value=\"提取\"><\/div><div class=\"controls preview-container\"><\/div><\/div><\/form><\/div><\/div><\/div><\/div><div class=\"js-upload-local-region\"><div><div class=\"modal-body\"><div class=\"upload-local-img\"><form class=\"form-horizontal\"><div class=\"control-group\"><label class=\"control-label\">本地图片：<\/label><div class=\"controls\"><div class=\"control-action\"><ul class=\"js-upload-image-list upload-image-list clearfix ui-sortable\"><li class=\"fileinput-button js-add-image\"><a class=\"fileinput-button-icon\" href=\"javascript:;\">+<\/a> <input class=\"js-fileupload-input fileupload\" type=\"file\"><\/li><\/ul><p class=\"help-desc\">最大支持 1 MB 的图片( jpg / gif / png )，不能选中大于 1 MB 的图片<\/p><\/div><\/div><\/div><\/form><\/div><\/div><div class=\"modal-footer\"><div class=\"modal-action pull-right\"><input type=\"button\" class=\"btn btn-primary js-upload-image\" data-loading-text=\"上传中...\" value=\"确定上传\"><\/div><\/div><\/div><\/div><\/div><\/div><\/div>";
+
+			function Menusort() {
+				$(".ui-sortable").sortable({
+					cancel: ".js-not-sortable",
+					axis: "y",
+					items: ".sortitem",
+					sort: function(event) {},
+					change: function() {},
+					over: function() {},
+					update: function(event, ui) {
+						ui.item.addClass("editing").siblings(".app-field").removeClass("editing");
+						var eventindex = ui.item.index();
+						$(".app-sidebar").css("margin-top", (eventindex - 1) * 61 + 317)
+						var eventitem = ui.item;
+						changebox(eventitem);
+					}
+				})
+			}
+			Menusort();
+
+			$(document).on("click", ".js-new-field", function() {
+				var appindex = $(".app-fields .app-field").length
+				if (appindex < 10) {
+					$(".ui-sortable").append(sortitem);
+					lastindex()
+					Menusort();
+					var lastapp = $(".app-field:last")
+					changebox(lastapp)
+				} else {
+					alert("超过最大限制")
+				}
+			})
+			$(document).on("click", ".app-field", function(event) {
+				var appsideindex = $(this).index();
+				//		alert(appsideindex)
+				if (appsideindex == 0) {
+					$(".app-sidebar").css("margin-top", "146px")
+				} else if (appsideindex > 0) {
+					$(".app-sidebar").css("margin-top", (appsideindex - 1) * 61 + 317)
+				}
+				$(this).addClass("editing").siblings(".app-field").removeClass("editing");
+				var clickindex = $(this)
+				changebox(clickindex);
+				inputtitle();
+				event.stopPropagation();
+			})
+
+			function lastindex() {
+				var appindex = $(".app-fields .app-field").length
+				$(".app-sidebar").css("margin-top", (appindex - 2) * 61 + 317);
+			}
+			$(document).on("click", ".delete", function(event) {
+				$(this).parents('.app-field').remove();
+				lastindex();
+				var lastapp = $(".app-field:last");
+				changebox(lastapp);
+				event.stopPropagation();
+			})
+
+			function changebox(obj) {
+				var apptitle = obj.find(".appmsg-title").text();
+				var appthumb = obj.find(".appmsg-thumb-wrap").find("img").attr("src");
+				//				alert(apptitle)
+				$(".app-sidebar-inner").find(".control-group:eq(0)").find("input").attr("value", apptitle);
+				$(".app-sidebar-inner").find(".control-group:eq(0)").find("input").val(apptitle);
+				if (appthumb == null || appthumb == "") {
+					$(".app-sidebar-inner").find(".js-image-region").find("img").remove()
+				} else {
+					$(".app-sidebar-inner").find(".js-image-region").find("img").attr("src", appthumb);
+				}
+			}
+			$(document).on("click", ".js-add-image", function() {
+				$(".modalcon").html(imagebox);
+				$('.mcover').show();
+			})
+			$(document).on("click", ".modal-header .close", function() {
+				$('.mcover').hide();
+			})
+			$(document).on("click", ".js-modal-tab-item:eq(0)", function() {
+
+				$(this).addClass("active").siblings(".js-modal-tab-item").removeClass("active")
+				$(".js-tab-pane:eq(0)").removeClass("hide").siblings(".js-tab-pane").addClass("hide")
+			})
+			$(document).on("click", ".js-modal-tab-item:eq(1)", function() {
+				$(this).addClass("active").siblings(".js-modal-tab-item").removeClass("active")
+				$(".js-tab-pane:eq(1)").removeClass("hide").siblings(".js-tab-pane").addClass("hide")
+			})
+			$(document).on("click", ".js-modal-tab-item:eq(2)", function() {
+				$(this).addClass("active").siblings(".js-modal-tab-item").removeClass("active")
+				$(".js-tab-pane:eq(2)").removeClass("hide").siblings(".js-tab-pane").addClass("hide")
+			})
+			$(document).on("click", ".widget-image-item", function() {
+
+			})
+
+			$(function() {
+				$("input[name='author']").on("click", function() {
+					var margintop = $(".app-sidebar").css("margin-top");
+					var marginone = parseInt(margintop)
+					var maindex = (parseInt(margintop) - 317) / 61 + 2
+					if (marginone == 146) {
+						var inpuval = $("input[name='title']").val();
+						$(".app-field:eq(1)").find(".appmsg-title").text(inpuval)
+					}
+					if (maindex >= 0) {
+						//						$(".app-field:eq(" + maindex + ")").find(".appmsg-title").text();
+						var inpuval = $("input[name='title']").val();
+						$(".app-field:eq(" + maindex + ")").find(".appmsg-title").text(inpuval);
+					}
+					event.stopPropagation();
+				})
+			})
+		</script>
+	</body>
+
+</html>

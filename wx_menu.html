@@ -1,0 +1,636 @@
+<html class="">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="renderer" content="webkit">
+		<meta name="referrer" content="always">
+
+		<title id="js-meta-title">
+			自定义菜单 - 飞煌微信分销</title>
+
+		<link rel="icon" href="https://b.yzcdn.cn/v2/image/yz_fc.ico">
+
+		<meta name="keywords" content="有赞,微信商城,粉丝营销,微信商城运营">
+		<meta name="description" content="有赞是帮助商家在微信上搭建微信商城的平台，提供店铺、商品、订单、物流、消息和客户的管理模块，同时还提供丰富的营销应用和活动插件。">
+		<link rel="stylesheet" href="css/lib/jquery-ui.min.css" />
+		<script src="js/lib/jquery.min.js"></script>
+		<script src="js/lib/jquery-ui.min.js"></script>
+		<!--<script type="text/javascript" src="js/layer.js"></script>-->
+		<script type="text/javascript" src="js/menu.js"></script>
+		<script type="text/javascript" src="js/lib/jquery.webui-popover.js"></script>
+		<link rel="stylesheet" href="css/lib/chosen.jquery.20150826.min.css" />
+		<link rel="stylesheet" href="css/lib/jquery.ui.20151022.min.css" />
+		<link rel="stylesheet" href="css/lib/bootstrap_140705.min.css" />
+		<link rel="stylesheet" href="css/lib/pc_62aa96d559.css" />
+		<link rel="stylesheet" href="css/lib/jquery.webui-popover.css" />
+		<link rel="stylesheet" href="css/menu_a3bd0d28c6.css" />
+		<link rel="stylesheet" href="css/image_text_28e2a4d1aa.css" />
+		<link rel="stylesheet" href="css/jBox.css" />
+		<style>
+			/*.ui-popover{position:absolute;z-index:1010;padding:3px;background:#000;border-radius:6px;-webkit-box-shadow:0px 2px 4px rgba(0,0,0,0.3);box-shadow:0px 2px 4px rgba(0,0,0,0.3)}.ui-popover .ui-popover-inner{background:#fff;min-width:280px;border-radius:4px;padding:10px}.ui-popover .arrow{position:absolute;width:0px;height:0px;border:5px solid transparent}.ui-popover .arrow::after{position:relative;display:block;content:' ';font-size:0;width:0px;height:0px;border:5px solid transparent}.ui-popover.left-top,.ui-popover.left-center,.ui-popover.left-bottom{margin-left:-10px}.ui-popover.left-top .arrow,.ui-popover.left-center .arrow,.ui-popover.left-bottom .arrow{border-left-color:#000}.ui-popover.left-top .arrow::after,.ui-popover.left-center .arrow::after,.ui-popover.left-bottom .arrow::after{border-left-color:#fff}.ui-popover.top-left,.ui-popover.top-center,.ui-popover.top-right{margin-top:10px}.ui-popover.top-left .arrow,.ui-popover.top-center .arrow,.ui-popover.top-right .arrow{border-bottom-color:#000}.ui-popover.top-left .arrow::after,.ui-popover.top-center .arrow::after,.ui-popover.top-right .arrow::after{border-bottom-color:#fff}.ui-popover.right-top,.ui-popover.right-center,.ui-popover.right-bottom{margin-left:10px}.ui-popover.right-top .arrow,.ui-popover.right-center .arrow,.ui-popover.right-bottom .arrow{border-right-color:#000}.ui-popover.right-top .arrow::after,.ui-popover.right-center .arrow::after,.ui-popover.right-bottom .arrow::after{border-right-color:#fff}.ui-popover.bottom-left,.ui-popover.bottom-center,.ui-popover.bottom-right{margin-top:-10px}.ui-popover.bottom-left .arrow,.ui-popover.bottom-center .arrow,.ui-popover.bottom-right .arrow{border-top-color:#000}.ui-popover.bottom-left .arrow::after,.ui-popover.bottom-center .arrow::after,.ui-popover.bottom-right .arrow::after{border-top-color:#fff}.ui-popover.left-top .arrow{top:10px;right:-10px}.ui-popover.left-top .arrow::after{right:8px;top:-5px}.ui-popover.left-center .arrow{margin-top:-5px;top:50%;right:-10px}.ui-popover.left-center .arrow::after{right:8px;top:-5px}.ui-popover.left-bottom .arrow{bottom:10px;right:-10px}.ui-popover.left-bottom .arrow::after{right:8px;top:-5px}.ui-popover.right-top .arrow{top:10px;left:-10px}.ui-popover.right-top .arrow::after{top:-5px;left:-2px}.ui-popover.right-center .arrow{margin-top:-5px;top:50%;left:-10px}.ui-popover.right-center .arrow::after{top:-5px;left:-2px}.ui-popover.right-bottom .arrow{bottom:10px;left:-10px}.ui-popover.right-bottom .arrow::after{top:-5px;left:-2px}.ui-popover.top-left .arrow{top:-10px;left:10px}.ui-popover.top-left .arrow::after{left:-5px;top:-2px}.ui-popover.top-center .arrow{margin-left:-5px;top:-10px;left:50%}.ui-popover.top-center .arrow::after{left:-5px;top:-2px}.ui-popover.top-right .arrow{top:-10px;right:10px}.ui-popover.top-right .arrow::after{left:-5px;top:-2px}.ui-popover.bottom-left .arrow{bottom:-10px;left:10px}.ui-popover.bottom-left .arrow::after{left:-5px;top:-8px}.ui-popover.bottom-center .arrow{margin-left:-5px;bottom:-10px;left:50%}.ui-popover.bottom-center .arrow::after{left:-5px;top:-8px}.ui-popover.bottom-right .arrow{bottom:-10px;right:10px}.ui-popover.bottom-right .arrow::after{left:-5px;top:-8px}.ui-popover--confirm .inner__content{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin-top:10px;border-top:1px solid #DCDCDC;padding:10px 5px;width:auto;min-width:100%;color:#666;background:#EEE}.widget-ueditor-emotion{z-index:2000}.widget-ueditor-emotion .ui-popover-inner{position:relative}.widget-ueditor-emotion .emotion-close{position:absolute;z-index:200;cursor:pointer;right:8px;top:13px;width:20px;height:20px;line-height:20px;text-align:center;font-size:17px;-webkit-transition:all 1s;-moz-transition:all 1s;transition:all 1s}.widget-ueditor-emotion .emotion-close:hover{color:#00cc33}.widget-ueditor-emotion .emotion-head span{cursor:pointer}.widget-ueditor-emotion .emotion-head span.tag{display:inline-block;background-color:transparent;border:1px solid #e5e5e5;border-radius:3px 3px 0 0;text-align:center;margin:0;color:#999;font-size:14px;line-height:18px;padding:4px}.widget-ueditor-emotion .emotion-head span.tag-green{color:#06bf04;border-top:1px solid #00cc33;border-left:1px solid #00cc33;border-right:1px solid #00cc33;border-bottom:1px solid #fff;position:relative;z-index:20}.widget-ueditor-emotion .emotion-content{border:1px solid #00cc33;margin-top:-1px;border-radius:0 4px 4px 4px;position:relative;z-index:10}.widget-ueditor-emotion .emotion-content .emotion-list-wrapper{width:506px}.widget-ueditor-emotion .emotion-content .emotion-list-wrapper div{float:left;padding:5px;border-right:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}.widget-ueditor-emotion .emotion-content .emotion-list-wrapper div span{display:block;width:35px;height:35px;cursor:pointer}.widget-ueditor-emotion .emotion-content .emotion-list-wrapper div:hover{background:#f0f0f0}.widget-ueditor-emotion .emotion-content span.jd{background: url("/v2/image/ueditor_emotion/jxface2.gif?v=1.1");background-repeat:no-repeat}.widget-ueditor-emotion .emotion-content span.tsj{background: url("/v2/image/ueditor_emotion/tface.gif?v=1.1");background-repeat:no-repeat}.widget-ueditor-emotion .emotion-content span.ldw{background: url("/v2/image/ueditor_emotion/wface.gif?v=1.1");background-repeat:no-repeat}.widget-ueditor-emotion .emotion-content span.bb{background: url("/v2/image/ueditor_emotion/bface.gif?v=1.1");background-repeat:no-repeat}.widget-ueditor-emotion .emotion-content span.cat{background: url("/v2/image/ueditor_emotion/cface.gif?v=1.1");background-repeat:no-repeat}.widget-ueditor-emotion .emotion-content span.pp{width:24px !important;height:24px !important;background: url("/v2/image/ueditor_emotion/fface.gif?v=1.1");background-repeat:no-repeat}.widget-ueditor-emotion .emotion-content span.youa{background: url("/v2/image/ueditor_emotion/yface.gif?v=1.1");background-repeat:no-repeat}.widget-ueditor-emotion .emotion-content span.qq{width:24px !important;height:24px !important;background: url("/v2/image/ueditor_emotion/qq.gif?v=1.1");background-repeat:no-repeat}.widget-ueditor-emotion .emotion-tabIconReview{display:none;position:absolute;width:90px;height:76px;border:2px solid #9cb945;background:#fff;text-align:center;top:37px;z-index:200}.widget-ueditor-emotion .emotion-tabIconReview img{background-position:center;background-repeat:no-repeat;width:94px;height:80px}.widget-ueditor-emotion .posLeft{left:10px}.widget-ueditor-emotion .posRight{right:10px}.widget-ueditor-video{z-index:2000}.widget-ueditor-video .modal-body{position:relative}.widget-ueditor-video .video-content{position:relative;z-index:10}.widget-ueditor-video .video-content label{font-weight:bold;margin:0 5px 0 0;color:#06c;display:inline;font-size:14px}.widget-ueditor-video .video-content input[type=text]{margin:5px 0;width:87%}.widget-ueditor-video .video-content #preview{min-height:280px;background-color:#ddd;text-align:center;font-size:20px}.widget-ueditor-video .video-content #preview span{display:block;padding-top:120px}.widget-ueditor-video .btn-primary{margin-right:10px}.widget-ueditor-link{z-index:2000}.widget-ueditor-link .share-content .follow-collect{padding:6px 66px;font-size:14px}.widget-ueditor-link .share-content .follow-collect span{padding:0 8px 0 0;color:#06bf04;cursor:pointer}.widget-ueditor-link .share-content .follow-collect span:nth-of-type(1){border-right:1px solid #06bf04}.widget-ueditor-link .share-content .follow-collect span:nth-of-type(2){padding:0 0 0 5px}.widget-ueditor-link .share-content .show{display:block}.widget-ueditor-link .share-content label{font-weight:bold;margin:0 5px 0 0;color:#06c;display:inline;font-size:14px}.widget-ueditor-link .share-content input[type=text]{margin:5px 0;width:78%}.widget-ueditor-link .share-content .error-info{color:#f60;font-size:14px;padding-left:66px;line-height:20px}.widget-ueditor-link .btn-primary{margin-right:10px}*/
+			.ui-popover {
+				position: absolute;
+				z-index: 1010;
+				padding: 3px;
+				background: #000;
+				border-radius: 6px;
+				-webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+				box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+			}
+
+			input {
+				height: auto !important;
+			}
+
+			#mcover {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(255, 255, 255, 0.8);
+				display: none;
+				z-index: 20000;
+			}
+
+			#jBox-overlay {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				/*background: #000;*/
+				background-color: rgba(255, 255, 255, .8) !important;
+			}
+		</style>
+		<style type="text/css"></style>
+		
+	</head>
+
+	<body class="theme theme--blue" cz-shortcut-listen="true" ryt13465="1" style="cursor: auto;">
+		<!-- ▼ Main container -->
+		<div class="container">
+			<div class="app">
+				<div class="app-inner clearfix">
+					<div class="app-init-container">
+						<div class="app__content">
+							<div id="no-menu" class="no_result alert-pane hide">
+								由于微信接口调整，您的公众号为订阅号，请先升级成服务号，方可使用自定义菜单！
+								<a href="http://mp.weixin.qq.com" target="_blank" class="new_window">去升级成服务号</a>
+							</div>
+							<div class="widget-app-board ui-box js-app-board hide" style="display: block;">
+								<div class="widget-app-board-info">
+									<h3>自定义菜单</h3>
+									<div>
+										<p>由于微信接口延迟，菜单修改后最长可能需要30分钟才会更新。如需即时查看，可先取消关注，再重新关注。</p>
+										<p><a href="http://kdt.im/29wYHGMJ" target="_blank">自定义菜单设置教程</a></p>
+									</div>
+								</div>
+								<div class="widget-app-board-control">
+									<button class="js-switch ui-switcher pull-right ui-switcher-on"></button>
+								</div>
+							</div>
+							<div class="app-design clearfix js-app-design">
+								<div class="app-preview">
+									<div class="app-entry">
+										<div class="app-header">
+											<div class="app-field">
+												<h5 class="title">飞煌</h5>
+											</div>
+										</div>
+										<div class="app-fields">
+											<div class="app-fields-inner js-show-list">
+											</div>
+										</div>
+										<div class="app-footer nav-on-bottom style-2 js-show-nav">
+											<div class="nav-menu clearfix has-menu-2">
+												<i class="menu-ico"></i>
+
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="app-sidebar">
+									<div class="js-nav">
+										<div class="js-first-nav-fields ui-sortable">
+											<div class="nav-field js-first-field" data-id="0">
+												<div class="close-modal js-del-first" style="display: none;">×</div>
+												<div class="field-wrap clearfix js-field-wrap">
+													<div class="menu-titles">
+														<div class="h4">一级菜单：</div>
+														<ul class="first-nav-field">
+															<li class="js-first-field-li js-menu-li clearfix " data-id="-1">
+																<span class="h5">标题</span>
+																<span class="opts">
+																	<a href="javascript:void(0);" class="js-edit-first show-pop-table" data-placement="right">编辑</a>
+																</span>
+															</li>
+														</ul>
+
+														<div class="h4">二级菜单：</div>
+														<ul class="sec-nav-field ui-sortable">
+															<li class="js-second-field js-menu-li clearfix " data-id="0">
+																<span class="h5"><span class="num"></span>标题</span>
+																<span class="opts">
+																	<a href="javascript:void(0);" class="js-edit-second">编辑</a> -
+																	<a href="javascript:void(0);" class="js-del-second">删除</a>
+																</span>
+															</li>
+
+															<li class="js-second-field js-menu-li clearfix " data-id="1">
+																<span class="h5"><span class="num"></span>标题</span>
+																<span class="opts">
+																	<a href="javascript:void(0);" class="js-edit-second">编辑</a> -
+																	<a href="javascript:void(0);" class="js-del-second">删除</a>
+																</span>
+															</li>
+
+															<li class="js-second-field js-menu-li clearfix " data-id="2">
+																<span class="h5"><span class="num"></span>标题</span>
+																<span class="opts">
+																	<a href="javascript:void(0);" class="js-edit-second">编辑</a> -
+																	<a href="javascript:void(0);" class="js-del-second">删除</a>
+																</span>
+															</li>
+
+															<li class="js-second-field js-menu-li clearfix " data-id="3">
+																<span class="h5"><span class="num"></span>标题</span>
+																<span class="opts">
+																	<a href="javascript:void(0);" class="js-edit-second">编辑</a> -
+																	<a href="javascript:void(0);" class="js-del-second">删除</a>
+																</span>
+															</li>
+															<li class="js-second-field js-menu-li clearfix  active " data-id="4">
+																<span class="h5"><span class="num"></span>标题</span>
+																<span class="opts">
+																	<a href="javascript:void(0);" class="js-edit-second">编辑</a> -
+																	<a href="javascript:void(0);" class="js-del-second">删除</a>
+																</span>
+															</li>
+
+														</ul>
+
+														<div class="add-second-nav">
+															<a href="javascript:void(0);" class="js-add-second">+ 添加二级菜单</a>
+															<!--<a href="javascript:void(0);" class="js-del-second">- 删除菜单</a>-->
+														</div>
+													</div>
+
+													<div class="menu-main">
+														<div class="menu-content" style="min-height:270px">
+															<div class="link-to js-link-to  hide " data-id="-1">
+
+																<span class="died-link-to">使用二级菜单后主回复已失效。</span>
+
+															</div>
+
+															<div class="link-to js-link-to  hide " data-id="0">
+
+																<!-- 相同代码 -->
+
+																<!-- 相同代码 end -->
+
+															</div>
+
+															<div class="link-to js-link-to  hide " data-id="1">
+
+																<!-- 相同代码 -->
+
+																<!-- 相同代码 end -->
+
+															</div>
+
+															<div class="link-to js-link-to  hide " data-id="2">
+
+																<!-- 相同代码 -->
+
+																<!-- 相同代码 end -->
+
+															</div>
+
+															<div class="link-to js-link-to  hide " data-id="3">
+
+																<!-- 相同代码 -->
+
+																<!-- 相同代码 end -->
+
+															</div>
+
+															<div class="link-to js-link-to " data-id="4">
+
+																<!-- 相同代码 -->
+
+																<!-- 相同代码 end -->
+
+															</div>
+
+														</div>
+
+														<div class="select-link js-select-link ">
+															<span class="change-txt">回复内容：</span>
+															<span class="main-link">
+																<a class="js-modal-txt" data-type="txt" href="javascript:void(0);">一般信息</a> -
+
+																<a class="js-modal-news" data-type="news" href="javascript:void(0);">图文素材</a> -
+
+																<!--<a class="js-modal-magazine" data-type="feature" href="javascript:void(0);">微页面</a> -
+                        <a class="js-modal-goods" data-type="goods" href="javascript:void(0);">商品</a> --->
+															</span>
+															<!--<div class="opts dropdown hover">
+																<a class="dropdown-toggle" href="javascript:void(0);">其他<i class="caret"></i></a>
+																<ul class="dropdown-menu">
+
+																	<li>
+																		<a class="js-modal-homepage" data-type="homepage" href="javascript:void(0);">店铺主页</a>
+																	</li>
+																	<li>
+																		<a class="js-modal-usercenter" data-type="usercenter" href="javascript:void(0);">会员主页</a>
+																	</li>
+																	<li>
+																		<a class="js-modal-survey" data-type="survey" href="javascript:void(0);">投票调查</a>
+																	</li>
+																	<li>
+																		<a class="js-modal-links" data-type="link" href="javascript:void(0);">自定义外链</a>
+																	</li>
+
+																</ul>
+															</div>-->
+
+															<div class="editor-image js-editor-image" style="display: none;"></div>
+
+															<div class="editor-place js-editor-place" style="display: block;">
+																<link rel="stylesheet" href="css/lib/ueditor.css">
+																<div class="hide editor-wrap js-editor-wrap" style="display: block; ">
+																	<div id="js-editor" class="edui-default" style="">
+																		<div id="edui1" class="edui-editor  edui-default" style="width: 296px; z-index: 1;">
+																			<div id="edui1_iframeholder" class="edui-editor-iframeholder edui-default" style="width: 296px; height: 120px; z-index: 1; overflow: hidden;">
+																				<textarea style="width: 296px; height: 140px;" maxlength="500"></textarea>
+																			</div>
+																			<div id="edui1_bottombar" class="edui-editor-bottomContainer edui-default">
+																				<table class="edui-default">
+																					<tbody class="edui-default">
+																						<tr class="edui-default">
+																							<td id="edui1_elementpath" class="edui-editor-bottombar edui-default"></td>
+																							<td id="edui1_wordcount" class="edui-editor-wordcount edui-default">大约还可以输入500个字</td>
+																							<td id="edui1_scale" class="edui-editor-scale edui-default" style="display: none;">
+																								<div class="edui-editor-icon edui-default"></div>
+																							</td>
+																						</tr>
+																					</tbody>
+																				</table>
+																			</div>
+																			<div id="edui1_scalelayer" class="edui-default"></div>
+																		</div>
+																	</div>
+																	<div class="btn-wrap">
+																		<input class="btn btn-primary js-btn-save" type="button" value="保 存">
+																		<input class="btn js-btn-close" type="button" value="关 闭">
+																	</div>
+																</div>
+
+															</div>
+
+														</div>
+
+													</div>
+
+												</div>
+											</div>
+
+											<div class="nav-field js-first-field" data-id="1">
+												<div class="close-modal js-del-first" style="display: none;">×</div>
+												<div class="field-wrap clearfix js-field-wrap">
+													<div class="menu-titles">
+														<div class="h4">一级菜单：</div>
+														<ul class="first-nav-field">
+															<li class="js-first-field-li js-menu-li clearfix " data-id="-1">
+																<span class="h5">标题</span>
+																<span class="opts">
+																	<a href="javascript:void(0);" class="js-edit-first">编辑</a>
+																</span>
+															</li>
+														</ul>
+
+														<div class="h4">二级菜单：</div>
+														<ul class="sec-nav-field ui-sortable">
+
+															<li class="js-second-field js-menu-li clearfix " data-id="0">
+																<span class="h5"><span class="num"></span>标题</span>
+																<span class="opts">
+																	<a href="javascript:void(0);" class="js-edit-second">编辑</a> -
+																	<a href="javascript:void(0);" class="js-del-second">删除</a>
+																</span>
+															</li>
+
+															<li class="js-second-field js-menu-li clearfix  active " data-id="1">
+																<span class="h5"><span class="num"></span>标题</span>
+																<span class="opts">
+																	<a href="javascript:void(0);" class="js-edit-second">编辑</a> -
+																	<a href="javascript:void(0);" class="js-del-second">删除</a>
+																</span>
+															</li>
+
+															<li class="js-second-field js-menu-li clearfix " data-id="2">
+																<span class="h5"><span class="num"></span>标题</span>
+																<span class="opts">
+																	<a href="javascript:void(0);" class="js-edit-second">编辑</a> -
+																	<a href="javascript:void(0);" class="js-del-second">删除</a>
+																</span>
+															</li>
+
+															<li class="js-second-field js-menu-li clearfix " data-id="3">
+																<span class="h5"><span class="num"></span>标题</span>
+																<span class="opts">
+																	<a href="javascript:void(0);" class="js-edit-second">编辑</a> -
+																	<a href="javascript:void(0);" class="js-del-second">删除</a>
+																</span>
+															</li>
+
+															<li class="js-second-field js-menu-li clearfix " data-id="4">
+																<span class="h5"><span class="num"></span>标题</span>
+																<span class="opts">
+																	<a href="javascript:void(0);" class="js-edit-second">编辑</a> -
+																	<a href="javascript:void(0);" class="js-del-second">删除</a>
+																</span>
+															</li>
+
+														</ul>
+
+														<div class="add-second-nav">
+															<a href="javascript:void(0);" class="js-add-second">+ 添加二级菜单</a>
+															<!--<a href="javascript:void(0);" class="js-del-first">- 删除菜单</a>-->
+														</div>
+													</div>
+
+													<div class="menu-main">
+														<div class="menu-content" style="min-height:270px">
+															<div class="link-to js-link-to  hide " data-id="-1">
+
+																<span class="died-link-to">使用二级菜单后主回复已失效。</span>
+
+															</div>
+
+															<div class="link-to js-link-to  hide " data-id="0">
+
+																<!-- 相同代码 -->
+
+																<!-- 相同代码 end -->
+
+															</div>
+
+															<div class="link-to js-link-to " data-id="1">
+
+																<!-- 相同代码 -->
+
+																<!-- 相同代码 end -->
+
+															</div>
+
+															<div class="link-to js-link-to  hide " data-id="2">
+
+																<!-- 相同代码 -->
+
+																<!-- 相同代码 end -->
+
+															</div>
+
+															<div class="link-to js-link-to  hide " data-id="3">
+
+																<!-- 相同代码 -->
+
+																<!-- 相同代码 end -->
+
+															</div>
+
+															<div class="link-to js-link-to  hide " data-id="4">
+
+																<!-- 相同代码 -->
+
+																<!-- 相同代码 end -->
+
+															</div>
+
+														</div>
+
+														<div class="select-link js-select-link ">
+															<span class="change-txt">回复内容：</span>
+															<span class="main-link">
+																<a class="js-modal-txt" data-type="txt" href="javascript:void(0);">一般信息</a> -
+
+																<a class="js-modal-news" data-type="news" href="javascript:void(0);">图文素材</a> -
+
+																<!--<a class="js-modal-magazine" data-type="feature" href="javascript:void(0);">微页面</a> -
+                        <a class="js-modal-goods" data-type="goods" href="javascript:void(0);">商品</a> --->
+															</span>
+															<!--<div class="opts dropdown hover">
+																<a class="dropdown-toggle" href="javascript:void(0);">其他<i class="caret"></i></a>
+																<ul class="dropdown-menu">
+
+																	<li>
+																		<a class="js-modal-homepage" data-type="homepage" href="javascript:void(0);">店铺主页</a>
+																	</li>
+																	<li>
+																		<a class="js-modal-usercenter" data-type="usercenter" href="javascript:void(0);">会员主页</a>
+																	</li>
+																	<li>
+																		<a class="js-modal-survey" data-type="survey" href="javascript:void(0);">投票调查</a>
+																	</li>
+																	<li>
+																		<a class="js-modal-links" data-type="link" href="javascript:void(0);">自定义外链</a>
+																	</li>
+
+																</ul>
+															</div>-->
+															<div class="editor-image js-editor-image" style="display: none;"></div>
+															<div class="hide editor-place js-editor-place" style="display: none;"></div>
+														</div>
+
+													</div>
+
+												</div>
+											</div>
+
+											<div class="add-first-nav">
+												<a href="javascript:void(0);" class="js-add-first">+ 添加一级菜单</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+								<div class="pin"></div>
+								<div class="app-actions">
+									<div style="position:relative;">
+										<div class="form-actions text-center" style="position: fixed; bottom: 0px; width: 850px; box-sizing: border-box; z-index: 100;">
+											<div>
+												<input class="btn btn-primary js-submit" type="submit" value="提交修改" data-loading-text="请稍候...">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--<div id="tableContent" style="display:none;">
+			<div class="ui-popover-inner">
+				<span></span>
+				<input class="input-medium js-name-input" type="text" value="" placeholder="" style="margin-bottom: 0;" maxlength="15">
+				<a href="javascript:;" class="ui-btn ui-btn-primary js-save">确定</a>
+				<a href="javascript:;" class="ui-btn js-cancel">取消</a>
+			</div>
+			<div class="arrow"></div>
+		</div>-->
+
+		<div id="mcover" onclick="$(this).hide()" style="display: none;">
+			<!--<img src="img/guide.png">-->
+			<div style="text-align: center; width: 65%; color: #000; margin: 0 auto; margin-top: 10%; background-color:#eafffa ; border-radius: 5px 5px 5px 5px; padding: 10px 15px;">
+				<div>温馨提示</div>
+				<p>最多添加<span style="color: #fb0009;" class="addnum">0</span>个</p>
+			</div>
+		</div>
+		<script language="JavaScript">
+			function sortdemo() {
+				for (var lo = 0; lo < 3; lo++) {
+					for (var pl = 0; pl < 6; pl++) {
+						$(".sec-nav-field:eq(" + lo + ") li").children(".h5:eq(" + pl + ")").each(function() {
+							$(".js-submenu:eq(" + lo + ") ul li").children(".js-submneu-a:eq(" + pl + ")").html($(this).text())
+						})
+					}
+				}
+			}
+
+			function firstdemo() {
+				for (var lg = 0; lg < 4; lg++) {
+					$(".js-first-field-li:eq(" + lg + ")").children(".h5").each(function() {
+						$(".js-mainmenu:eq(" + lg + ")").children(".mainmenu-txt").html($(this).text())
+					})
+				}
+			}
+			//			function firstdemolist(){
+			//				var firstdemo="<a class=\"mainmenu js-mainmenu\" href=\"javascript:void(0);\"><i class=\"arrow-weixin\"><\/i><span class=\"mainmenu-txt\">标题<\/span><\/a>";
+			//			}
+			//				for (var lol=0;lol<4;lol++) {
+			//					$(".first-nav-field:eq("+lol+") li").children(".h5").each(function(){
+			//						$(".js-submenu:eq("+lol+") ul li").children(".mainmenu-txt").html($(this).text())
+			//					})				
+			//				}
+
+
+			$(".mainmenu").click(function() {
+				firstdemo();
+				Demolist();
+			})
+
+			function Demolist() {
+				var demoli = "<li><a class=\"js-submneu-a\" data-id=\"0\" href=\"javascript:void(0);\">标题<\/a><\/li>";
+				for (var subnum = 0; subnum < 3; subnum++) {
+					var Secondlen = $(".sec-nav-field:eq(" + subnum + ")").children("li").length;
+					$(".js-submenu:eq(" + subnum + ") ul").children("li").remove();
+					for (var seclen = 0; seclen < Secondlen; seclen++) {
+						$(".js-submenu:eq(" + subnum + ") ul").append(demoli);
+					}
+				}
+				sortdemo();
+			}
+		</script>
+		<script type="text/javascript" src="js/jBox.min.js"></script>
+		<script language="JavaScript">
+			var Tablecon =
+				"<div classs= \"ui-popover top-center\"> <div class=\"ui-popover-inner\"><span><\/span> <input class=\"input-medium js-name-input\" type=\"text\" value=\"\" placeholder=\"\" style=\"margin-bottom:0\" maxlength=\"15\"> <a href=\"javascript:;\" class=\"ui-btn ui-btn-primary js-save\">确定<\/a> <a href=\"javascript:;\" class=\"ui-btn js-cancel\">取消<\/a><\/div><div class=\"arrow\"><\/div><\/div>";
+			$('.js-edit-second').jBox('Tooltip1', {
+				attach: $(this),
+
+				position: {
+					x: 'left',
+					y: 'top'
+				},
+				outside: 'x',
+				content: Tablecon,
+				closeOnClick: false,
+				closeButton: "js-news-modal-dismiss"
+
+			});
+			$(document).on("click", ".js-edit-second", function() {
+				//			alert($(this).parents("li").index());
+				var titlename = $(this).parent(".opts").prev(".h5").text();
+				$(".ui-popover-inner").children("input").val(titlename)
+				return false;
+			})
+			$('.js-edit-first').jBox('Tooltip2', {
+				attach: $(this),
+
+				position: {
+					x: 'left',
+					y: 'top'
+				},
+				outside: 'x',
+				content: Tablecon,
+				closeOnClick: false,
+				closeButton: "js-news-modal-dismiss"
+
+			});
+			$(document).on("click", ".js-edit-first", function() {
+				//			alert($(this).parents("li").index());
+				var titlename = $(this).parent(".opts").prev(".h5").text();
+				$(".ui-popover-inner").children("input").val(titlename)
+				return false;
+			})
+
+
+			$(document).on("click", ".js-save", function() {
+				var Valinput = $(this).prev("input").val();
+				//		 找ID插	 
+				$(this).parents(".jBox-content").next(".jBox-closeButton").trigger("click")
+			})
+
+			$(document).on("click", ".js-cancel", function() {
+				$(this).parents(".jBox-content").next(".jBox-closeButton").trigger("click")
+			})
+
+			var modalbox =
+				"<div class=\"modal-header\"><a class=\"close js-news-modal-dismiss \" data-dismiss=\"modal\" onclick=\"myModal.close();\"><\/a> <ul class=\"module-nav modal-tab\"><li class=\"active\"><a href=\"#js-module-news\" data-type=\"news\" class=\"js-modal-tab\">高级图文<\/a> |<\/li><li><a href=\"#js-module-mpNews\" data-type=\"mpNews\" class=\"js-modal-tab\">微信图文<\/a> |<\/li><li class=\"link-group link-group-0\" style=\"display:inline-block\"><a href=\"//koudaitong.com/v2/weixin/advancednews#list\" target=\"_blank\" class=\"new_window\">高级图文素材管理<\/a><\/li><li class=\"link-group link-group-1\" style=\"display:none\"><a href=\"//koudaitong.com/v2/weixin/imagetext#list\" target=\"_blank\" class=\"new_window\">微信图文素材管理<\/a><\/li><\/ul><\/div><div class=\"modal-body\"><div class=\"tab-content\"><div id=\"js-module-news\" class=\"tab-pane module-news active\"><table class=\"table\"><colgroup><col class=\"modal-col-title\"><col class=\"modal-col-time\" span=\"2\"><col class=\"modal-col-action\"><\/colgroup><thead><tr><th class=\"title\"><div class=\"td-cont\"><span>标题<\/span> <a class=\"js-update\" href=\"javascript:void(0);\">刷新<\/a><\/div><\/th><th class=\"time\"><div class=\"td-cont\"><span>创建时间<\/span><\/div><\/th><th class=\"opts\"><div class=\"td-cont\"><form class=\"form-search\"><div class=\"input-append\"><input class=\"input-small js-modal-search-input\" type=\"text\"><a href=\"javascript:void(0);\" class=\"btn js-fetch-page js-modal-search\" data-action-type=\"search\">搜<\/a><\/div><\/form><\/div><\/th><\/tr><\/thead><tbody><tr><td class=\"title\"><div class=\"td-cont\"><div class=\"ng ng-single\"><div class=\"ng-item\"><div class=\"ng-title\"><a href=\"https://wap.koudaitong.com/v2/showcase/goods?alias=si7rix1j\" target=\"_blank\" class=\"new-window\" title=\"粉刺针/挑痘痘 颜色随机发 - 测试商品，不发货，不退款\">粉刺针/挑痘痘 颜色随机发 - 测试商品，不发货，不退款<\/a><\/div><\/div><div class=\"ng-item view-more\"><a href=\"https://wap.koudaitong.com/v2/showcase/goods?alias=si7rix1j\" class=\"clearfix new-window\"><span class=\"pull-left\">阅读全文<\/span> <span class=\"pull-right\">&gt;<\/span><\/a><\/div><\/div><\/div><\/td><td class=\"time\"><div class=\"td-cont\"><span>2015-12-11<br>10:10:11<\/span><\/div><\/td><td class=\"opts\"><div class=\"td-cont\"><button class=\"btn js-choose\" href=\"#\" data-id=\"25660894\" data-url=\"\" data-page-type=\"news\" data-cover-attachment-id=\"\" data-cover-attachment-url=\"\" data-title=\"粉刺针/挑痘痘 颜色随机发 - 测试商品，不发货，不退款\" data-alias=\"\">选取<\/button><\/div><\/td><\/tr><tr><td class=\"title\"><div class=\"td-cont\"><div class=\"ng ng-single\"><div class=\"ng-item\"><div class=\"ng-title\"><a href=\"https://wap.koudaitong.com/v2/showcase/homepage?alias=10xku6w9b\" target=\"_blank\" class=\"new-window\" title=\"店铺主页\">店铺主页<\/a><\/div><\/div><div class=\"ng-item view-more\"><a href=\"https://wap.koudaitong.com/v2/showcase/homepage?alias=10xku6w9b\" class=\"clearfix new-window\"><span class=\"pull-left\">阅读全文<\/span> <span class=\"pull-right\">&gt;<\/span><\/a><\/div><\/div><\/div><\/td><td class=\"time\"><div class=\"td-cont\"><span>2015-12-11<br>10:08:16<\/span><\/div><\/td><td class=\"opts\"><div class=\"td-cont\"><button class=\"btn js-choose\" href=\"#\" data-id=\"25660484\" data-url=\"\" data-page-type=\"news\" data-cover-attachment-id=\"\" data-cover-attachment-url=\"\" data-title=\"店铺主页\" data-alias=\"\">选取<\/button><\/div><\/td><\/tr><tr><td class=\"title\"><div class=\"td-cont\"><div class=\"ng ng-single\"><div class=\"ng-item\"><div class=\"ng-title\"><a href=\"https://wap.koudaitong.com/v2/showcase/goods?alias=11fhrld3r\" target=\"_blank\" class=\"new-window\" title=\"纪梵希亮彩粉底液(隔离防晒修饰乳)30ML - 测试商品，不发货，不退款\">纪梵希亮彩粉底液(隔离防晒修饰乳)30ML - 测试商品，不发货，不退款<\/a><\/div><\/div><div class=\"ng-item view-more\"><a href=\"https://wap.koudaitong.com/v2/showcase/goods?alias=11fhrld3r\" class=\"clearfix new-window\"><span class=\"pull-left\">阅读全文<\/span> <span class=\"pull-right\">&gt;<\/span><\/a><\/div><\/div><\/div><\/td><td class=\"time\"><div class=\"td-cont\"><span>2015-12-11<br>10:08:15<\/span><\/div><\/td><td class=\"opts\"><div class=\"td-cont\"><button class=\"btn js-choose\" href=\"#\" data-id=\"25660479\" data-url=\"\" data-page-type=\"news\" data-cover-attachment-id=\"\" data-cover-attachment-url=\"\" data-title=\"纪梵希亮彩粉底液(隔离防晒修饰乳)30ML - 测试商品，不发货，不退款\" data-alias=\"\">选取<\/button><\/div><\/td><\/tr><\/tbody><\/table><\/div><\/div><\/div><div class=\"modal-footer\"><div style=\"display:none\" class=\"js-confirm-choose pull-left\"><input type=\"button\" class=\"btn btn-primary\" value=\"确定使用\"><\/div><div class=\"pagenavi\"><span class=\"total\">共 8 条，每页 3 条<\/span> <a data-page-num=\"1\" href=\"javascript:void(0);\" class=\"num active\" contenteditable=\"true\">1<\/a> <a class=\"fetch_page num\" data-page-num=\"2\" href=\"javascript:void(0);\">2<\/a> <a class=\"fetch_page num\" data-page-num=\"3\" href=\"javascript:void(0);\">3<\/a> <a class=\"fetch_page next\" data-page-num=\"2\" href=\"javascript:void(0);\">下一页<\/a> <\/div><\/div>";
+
+			$('.js-modal-news').jBox('Modal', {
+
+				content: modalbox,
+				closeOnClick: false,
+				closeButton: "js-news-modal-dismiss"
+			});
+			$('.js-modal-news').jBox('Modal', {
+
+				content: modalbox,
+				closeOnClick: false,
+				closeButton: "js-news-modal-dismiss",
+
+			});
+
+			$(".js-news-modal-dismiss").on("click", function() {
+				$(this).parents(".jBox-Modal").remove();
+			})
+
+			//		window.onload=function(){
+			//			Demolist();
+			//		}
+			// 	
+			//		
+			//						var firstlength=$(".js-first-field").length
+			//						if(firstlength=0){
+			//							$(".app-sidebar,.app-actions").wrap('<div class="app-design clearfix js-app-design"></div>');
+			//						}
+
+			////						var sidebarcon="<div class=\"app-sidebar\"><div class=\"js-nav\"><div class=\"js-first-nav-fields ui-sortable\"><div class=\"add-first-nav\"><a href=\"javascript:void(0);\" class=\"js-add-first\">+ 添加一级菜单<\/a><\/div><\/div><\/div><\/div>";
+			////						var actioncon="<div class=\"app-actions\"><div style=\"position:relative\"><div class=\"form-actions text-center\" style=\"position:fixed;bottom:0;width:850px;box-sizing:border-box;z-index:100\"><div><input class=\"btn btn-primary js-submit\" type=\"submit\" value=\"提交修改\" data-loading-text=\"请稍候...\"><\/div><\/div><\/div><\/div>";
+			////						$(".app__content").children(".app-sidebar").remove();
+			////						$(".app__content").children(".app-actions").remove();						
+			//						$(".app-design").append(sidebarcon)
+			//						$(".app-design").append(actioncon)
+		</script>
+
+	</body>
+
+</html>
