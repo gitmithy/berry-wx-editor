@@ -1,6 +1,6 @@
 # berry-wx-editor
 
-> 16年公司要求放有赞后台制作的微信平台ui套件工具 [](https://www.bilibili.com/bangumi/media/md5058)
+> 16年公司要求仿有赞后台制作的微信平台ui套件工具 [](https://www.bilibili.com/bangumi/media/md5058)
 
 > 非实际线上最终版本，仅做展示。
 
